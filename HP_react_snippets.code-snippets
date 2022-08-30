@@ -1,0 +1,969 @@
+{
+	// Place your web_develop_project workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Output_render syntax": {
+		"scope": "plaintext,javascript,typescript,react,reactjs,React,Reactjs,react native,React Native,React native,html,php,angularjs,jquery",
+		"prefix": "react_render",
+		"body":[
+			"const container = document.getElementById('block1');",
+			"const container2 = document.querySelectorAll('#block2')[0];",
+			"const root_1 = createRoot(container);",
+			"root_1.render(<Blockcode1/>);",
+		],
+		"description": "Inserting a block of ReactJS syntaxes to render component and output the result to webpage"
+	},
+
+
+
+	"Main starting syntaxes": {
+	 	"scope": "plaintext,javascript,typescript,react,reactjs,React,Reactjs,react native,React Native,React native,html,php,angularjs,jquery",
+	 	"prefix": "reactmainsyntax",
+	 	"body": [
+	 	
+		    "import React,{useState,useEffect,useCallback,useMemo,memo,useRef,createRef,forwardRef,useContext,",
+			"createContext,useReducer,Suspense,lazy,Component,PureComponent,startTransition}",
+			"from 'react';",
+			"import {createRoot} from 'react-dom/client';",
+            "import {BrowserRouter,Routes,Route,Outlet,Link} from 'react-router-dom'; ",
+			"import PropTypes from 'prop-types';",
+			"import ReactDOM from 'react-dom';",
+			"import './test1.scss';",
+			"import $ from 'jquery';",
+
+
+			"\t",
+			"\t",
+			"\t",
+
+
+            "class ErrorBoundaries extends React.Component{",
+      		"    constructor(props){",
+			"        super(props);",
+			"        this.state  = {error:false};",
+			"    }",
+			"    static getDerivedStateFromError(error){",
+			"        this.setState({error:true});",
+			"        return console.log(`",
+			"        Error: ${$error}.",
+			"        `);",
+			"    }",
+			"    componentDidCatch(error,errorinfo){",
+			"        return console.log(`",
+			"        Error: ${$error}.",
+			"        Error Information: ${$errorinfo}",
+			"        `);",
+			"    }",
+			"    render(){",
+			"        if(this.state.error === true){",
+			"            return <h1>There was an error occurred while rendering component contents!!!</h1>",
+			"        }else{",
+			"            return this.props.children;",
+			"        }",
+			"    }",
+			"}",
+
+
+			"$TM_SELECTED_TEXT",
+			"$TM_SELECTED_TEXT",
+			"$TM_SELECTED_TEXT",
+			"$TM_SELECTED_TEXT",
+
+
+			"class Blockcode1 extends Component {",
+  
+			"    render(){",
+			"        return (",
+			"            <ErrorBoundaries>",
+			"                <Suspense fallback={<h1>Loading...</h1>}>",
+			"                     <React.StrictMode>",
+			"                     </React.StrictMode>",
+			"                </Suspense>",
+			"            </ErrorBoundaries>",
+			"        )",
+			"    }",
+			"}",
+
+			"$TM_SELECTED_TEXT",
+			"$TM_SELECTED_TEXT",
+
+            "function Checkprop(prop){",
+			"   return prop.propTypes = {",
+			"    name:function(props,propsName,componentName){",
+			"        if(!/PH/gim.test(props[propsName])){",
+			"            return new Error(`",
+			"            Invalid props named: '${$propsName}' supplied to component named: '${$componentName}'.",
+			"            Validation failed!!!",
+			"            `);",
+			"        }",
+			"    },",
+			"    lastname:PropTypes.arrayOf(function(propValue,key,componentName,location,propFullName){",
+			"        if(!/ABC/gim.test(propValue[key])){",
+			"            return new Error(`",
+			"            Invalid props named: '${$propFullName}' supplied to component named: '${$componentName}'.",
+			"            Validation failed!!!",
+			"            `);",
+			"        }",
+			"    }),",
+			"    fullname:PropTypes.oneOfType([",
+			"        PropTypes.string,",
+			"        PropTypes.number,",
+			"        PropTypes.array,",
+			"        PropTypes.object,",
+			"        PropTypes.bool,",
+			"        PropTypes.symbol,",
+			"        PropTypes.oneOf(['Hello','Hi']),",
+			"        PropTypes.arrayOf(PropTypes.number),",
+			"        PropTypes.arrayOf(PropTypes.string),",
+			"        PropTypes.objectOf(PropTypes.number),",
+			"        PropTypes.objectOf(PropTypes.string),",
+			"        PropTypes.func,",
+			"        PropTypes.element,",
+			"        PropTypes.elementType,",
+			"        PropTypes.node,",
+			"        PropTypes.instanceOf('Welcome'),",
+			"        PropTypes.shape({",
+			"            color:PropTypes.string,",
+			"            backgroundColor:PropTypes.string",
+			"        })",
+			"    ]).isRequired",
+			"  }",
+			"}",
+			"Checkprop(Blockcode1);",
+
+			"$TM_SELECTED_TEXT",
+			"$TM_SELECTED_TEXT",
+
+
+			"function Blockcode2(){",
+			"    return <h1>Welcome</h1>",
+			"}",
+
+			"$TM_SELECTED_TEXT",
+			"$TM_SELECTED_TEXT",
+
+
+			"var container1  = document.getElementById('block1'),",
+			"root_1 = createRoot(container1);",
+			"root_1.render(<Blockcode1 name='PH' lastname={['ABC']} fullname='HP'/>);",
+
+
+	 	],
+	 	"description": "Syntaxes includes all necessary starting import syntaxes, PropTypes, ErrorBoundaries, Suspense, StrictMode, Profilers, class component, function component, createRoot, and render "
+	},
+
+
+
+	"Basic Form with Handle Data":{
+		"scope":"plaintext,javascript,typescript,react,reactjs,React,Reactjs,react native,React Native,React native,html,php,angularjs,jquery",
+		"prefix":"react_form_with_handle_data",
+		"body":[
+			"function Form1_block(){",
+			"    var [inputdata,setInputdata]  = useState({});",
+			"    var [comment1,setComment1]  = useState('');",
+			"    var [account_select1,setAccountSelect]  = useState('Type_1');",
+			"\t",
+			"\t",
+	
+			"     function Handle_data(event){", 
+			"          var name = event.target.name;",
+			"          var value = event.target.value;",
+			"          setInputdata((val)=>({...val,[name]:value}));",
+			"      }",
+
+			"\t",
+			"\t",
+
+            "     function Preventsubmit(event){", 
+			"           event.preventDefault();",
+			"           console.log(`",
+			"            Your info: \n",
+			"            Name: ${$inputdata.name1 || ''}.",
+			"            Email: ${inputdata.email1 || ''}",
+			"           `);",
+			"     }",
+			"\t",
+			"\t",
+
+
+			"    return (",
+		    "    <div style={{display:'grid',gridTemplateColumns:'600px 600px'}}>",
+			"           <form id='form1' title='form1' name='form1' target='_self'",
+			"           action='index.html' method='post'   ",
+			"           encType='multipart/form-data' data-form1='form1 data' style={{width:'600px',",
+			"           border:'4px solid green',padding:'20px',fontSize:'30px'}}",
+			"           onSubmit={Preventsubmit}>",
+
+			"\t",
+			"\t",
+            
+			
+			"                   <label htmlFor='name_input'><b>Name:</b></label><br/>",
+			"                   <input id='name_input' title='name input' name='name1' type='text'",
+			"                   placeholder='Enter your name...' data-input1='name input1 data'",
+			"                   style={{width:'100%'}} value={inputdata.name1 || ''}",
+			"                   onChange={Handle_data}",
+			"                   />",
+
+
+			"\t",
+			"\t",
+
+
+			"                   <label htmlFor='email_input'><b>Email:</b></label><br/>",
+			"                   <input id='email_input' title='email input' name='email1' type='email'",
+			"                    placeholder='Enter your email...' data-input2='email input1 data'",
+			"                    style={{width:'100%'}} value={inputdata.email1 || ''}",
+			"                    onChange={Handle_data}",
+			"                    />",
+			"\t",
+
+			"    <br/><br/>",
+
+			"\t",
+            "\t",
+
+			
+			"                   <label htmlFor='comment_input'><b>Comment:</b></label>",
+                              
+			"\t",
+            "\t",
+      
+			"                   <textarea id='comment_input' name='comment1' title='comment_input' ",
+			"                   placeholder='Comment something...' datacommentinput='comment_input_data' ",
+			"                   style={{width:'100%',height:'80px',overflow:'scroll'}}",
+			"                   value={comment1||''} onChange={event=>setComment1(event.target.value)}>",
+			"                   </textarea>",
+			"\t",
+            "\t",
+			"                   <br/><br/>",
+			"\t",
+            "\t",
+
+			"                   <label htmlFor='account_select'><b>Account Selection:</b></label>",
+			"\t",
+            "\t",
+
+			"                   <select id='account_select' name='account_select1' title='account_selection' ",
+			"                   dataaccountselect='account_selection_data' ",
+			"                   style={{width:'100%'}} value={account_select1 || ''} onChange={event=>setAccountSelect(event.target.value)}>",
+			"                   <optgroup label='Common'>",
+			"                         <option value='Type_1'>Type 1</option>",
+			"                         <option value='Type_2'>Type 2</option>",
+			"                         <option value='Type_3'>Type 3</option>",
+			"                   </optgroup>",
+			"                   <optgroup label='VIP'>",
+			"                        <option value='Type_4'>Type 4</option>",
+			"                        <option value='Type_5'>Type 5</option>",
+			"                        <option value='Type_6'>Type 6</option>",
+			"                   </optgroup>",
+			"                   <optgroup label='First Class'>",
+			"                        <option value='Type_7'>Type 7</option>",
+			"                        <option value='Type_8'>Type 8</option>",
+			"                        <option value='Type_9'>Type 9</option>",
+			"                        <option value='Type_10'>Type 10</option>",
+			"                   </optgroup>",
+			"\t",
+            "\t",
+
+			"                   </select><br/><br/>",
+
+            "\t",
+            "\t",
+
+			"                    <button id='submit_butt' title='submit_butt' name='submit_butt'",
+			"                    type='submit' data-butt1='submit button1 data'", 
+			"                    className='submit_butt w3-btn w3-block w3-ripple w3-green w3-text-white", 
+			"                    w3-hover-blue w3-hover-text-white'><i className='fa fa-sign-in'></i>SUBMIT</button>",
+			"\t",						
+			"            </form>",
+            "\t",
+			"             <div>",
+			"                 <h1>Name:  {inputdata.name1 || ''}</h1> <br/>",
+			"\t",				
+			"                 <h1>Email: {inputdata.email1 || ''}</h1><br/>",
+			"\t",				
+			"                 <h1>Comment: {comment1 || ''}</h1><br/>",
+			"\t",				
+			"                 <h1>Account Selection: {account_select1 || ''}</h1><br/>",
+			"             </div>",
+			"     </div>",
+
+			"   )",
+			"}"
+		],
+		"description": "Create form syntax with handling form data inside a function component "
+	},
+
+
+	"React button+attributes":{
+        "scope":"plaintext,html,php,react,reactjs,javascript,typescript,angularjs,jquery",
+        "prefix":"react_button_with_attributes",
+        "body":[
+            "<button id='${1:butt1}' name='${2:butt1}' title='${3:button 1}' ",
+            "type='${4|button,submit|}' className='btn btn-primary text-white w3-hover-green'",
+            "onClick={${5:Func1}} databuttdata='${6:button_data}'><i className='${7:fa fa-home}'></i>  ${8:Button1}</button>",
+
+            "\t",
+            "\t",
+        "<button id='${1:butt2}' name='${2:butt2}' title='${3:button 2}' ",
+            "type='${4|button,submit|}' className='w3-button w3-ripple w3-blue w3-text-white w3-hover-red'",
+            "onClick={${5:Func1}} databuttdata='${6:button_data}'><i className='${7:fa fa-home}'></i>  ${8:Button2}</button>"
+        ],
+        "description":"Create a button with all neccessary attributes"
+    },
+    "React <a>_button+attributes":{
+        "scope":"plaintext,html,php,react,reactjs,javascript,typescript,angularjs,jquery",
+        "prefix":"react_<a>_button_with_attributes",
+        "body":[
+           "<a id='${1:butt1}' name='${2:butt1}' title='${3:button 1}' href='${4:#}' target='${5|_self,_blank,anyname|}' ",
+            "type='button' className='btn btn-primary text-white w3-hover-green'",
+            "onClick={${6:Func1}} databuttdata='${7:button_data}'><i className='${8:fa fa-home}'></i>  ${9:Button1}</a>",
+
+            "\t",
+            "\t",
+        "<a id='${1:butt2}' name='${2:butt2}' title='${3:button 2}' href='${4:#}' target='${5|_self,_blank,anyname|}' ",
+            "type='button' className='w3-button w3-ripple w3-blue w3-text-white w3-hover-red'",
+            "onClick={${6:Func1}} databuttdata='${7:button_data}'><i className='${8:fa fa-home}'></i>  ${9:Button2}</a>"
+        ],
+        "description":"Create a <a> element button with all neccessary attributes"
+    },
+
+
+
+
+
+	"React <input>+<label>+attributes":{
+        "scope":"plaintext,html,php,react,reactjs,javascript,typescript,,angularjs,jquery",
+        "prefix":"react_<input><label>_with_attributes",
+        "body":[
+            "<label htmlFor='${1:name_input}'><b>${2:Name}:</b></label><br/>",
+			"                   <input id='${3:name_input}' title='${4:name_input}' name='${5:name1}' type='${6|text,email,password,number,time,date,datetime-local,tel,month|}'",
+			"                   placeholder='${7:Enter your name...}' data${8:input1}='${9:name input1 data}'",
+			"                   style={{width:'100%'}} value={${10:inputdata.name1 || ''}}",
+			"                   onChange={${11:Handle_data}}",
+			"                   />",
+        ],
+        "description":"Create <input>+<label> elements with all neccessary attributes"
+    },
+
+
+
+
+	
+	"React Upload Avatar Form":{
+		"scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+		"prefix":"react_upload_avatar_form",
+		"body":[
+		   "    function Upload_Avatar_block(){",
+		   "\t",
+		   "\t",
+		   "        var [filedata,setFiledata]  = useState(); ", 
+		   "        var Ref1 = createRef();",
+		   "\t",
+		   "\t",
+		   "        function Handle_data(){",
+		   "\t",
+		   "\t",
+		   "           let file1 = Ref1.current.files[0];",
+		   "\t",
+		   "\t",
+		   "           if(file1){",
+		   "\t",
+		   "\t",
+		   "               let fileReader1 = new FileReader();",
+		   "\t",
+		   "\t",
+		   "               fileReader1.onload=function(event){",
+		   "\t",
+		   "\t",
+		   "                  \\$('#avatar_preview_img')",
+		   "                     .css({'display':'block'})",
+		   "                     .attr('src',event.target.result);",
+		   "\t",
+		   "\t",
+		   "                }",
+		   "\t",
+		   "\t",
+		   "              fileReader1.readAsDataURL(file1);",
+		   "\t",
+		   "\t",
+		   "           }",
+		   "\t",
+		   "\t",
+		   "           setFiledata({",
+		   "\t",
+		   "\t",
+		   "                name:Ref1.current.files[0].name,",
+		   "\t",
+		   "                size:Ref1.current.files[0].size,", 
+		   "\t",
+		   "                type:Ref1.current.files[0].type", 
+		   "\t",
+		   "           });",
+		   "\t",
+		   "\t",
+		   "         }",
+   
+		   "\t",
+		   "\t",			
+		   "         function Preventsubmit(event){",
+		   "\t",
+		   "\t",
+		   "              event.preventDefault();",
+		   "              console.log(`",
+		   "              Your File Information: ",
+		   "\t",
+		   "          File name: \\${filedata.name || ''}.",
+		   "\t",
+		   "          File size: \\${filedata.size || ''} bytes.",
+		   "\t",
+		   "          File type: \\${filedata.type || ''}.",
+		   "\t",
+		   "          `);",
+		   "         }",
+		
+		   "\t",
+		   "\t",
+		   "     return (",
+		   "          <div style={{display:'grid',gridTemplateColumns:'600px 600px'}}>",
+		   "               <form id='form1' title='form1' name='form1' target='_self'",
+		   "               action='index.html' method='post'   ",
+		   "               encType='multipart/form-data' data-form1='form1 data' style={{width:'600px',",
+		   "               border:'4px solid green',padding:'20px',fontSize:'30px'}}",
+		   "               onSubmit={Preventsubmit}>",
+		
+		   "\t",
+		   "\t",
+		   "                    <label htmlFor='name_input' style={{width:'100%',backgroundColor:'green',",
+		   "                    color:'white',padding:'20px',cursor:'pointer'}}",
+		   "                    className='w3-hover-orange w3-hover-text-white'>",
+		   "\t",
+		   "\t",
+		   "                          <input id='avatar_input' ref={Ref1} title='avatar input' name='name1' type='file'",
+		   "                         data-avatar_input='avatar input data'",
+		   "                         style={{position:'absolute',top:'35px',opacity:'0',zIndex:'1'}} ",
+		   "                         onChange={Handle_data} accept='image/*' ",
+		   "                         />",
+		   "\t",
+		   "\t",
+		   "                          <b style={{position:'relative',top:'5px',left:'100px'}}><i className='fa fa-file-photo-o'></i> UPLOAD AVATAR</b>",
+		   "\t",
+		   "\t",
+		   "                    </label><br/>",
+					  
+		
+		   "\t",
+		   "\t",
+					   
+							
+		   "                    <img id='avatar_preview_img' alt='avatar_preview_img' ",
+		   "                    width='200px' height='200px' style={{display:'none',",
+		   "                    position:'relative',left:'160px'}}/>",
+		   "\t",
+		   "\t",		  
+					  
+	
+		   "                    <br/>",
+		   "\t",
+		   "\t",
+		   "                    <button id='upload_butt' title='upload_butt' name='upload_butt'",
+		   "                    type='submit' data-upload-butt='upload button data'",
+		   "                    className='submit_butt w3-btn w3-block w3-ripple w3-blue w3-text-white",
+		   "                    w3-hover-purple w3-hover-text-white'><i className='fa fa-upload'></i> UPLOAD</button>",
+		   "\t",
+		   "\t",
+		   "                    </form>",
+		   "\t",
+		   "\t",
+				
+		   "               </div>",
+		   "\t",
+		   "\t",
+		   "        )",
+		   "\t",
+		   "\t",
+		   "    }",
+		   "\t",
+		   "\t"
+	
+   
+		],
+		"description": "Create a form to upload avatar through <input type='file' />"
+	  },
+
+      
+	  "Function Component With Props":{
+		"scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+		"prefix":"react_function_component_with_props",
+		"body":[
+			"function ${1:Blockcode1}(${2:props}){",
+			"         return(",
+			"             <ErrorBoundaries>",
+			"                 <Suspense fallback={<h1>Loading...</h1>}> ",
+			"                       <React.StrictMode> ",
+			"                           <React.Fragment> ",
+			"                                <div>",
+			"                                     <h1>{${3:props.id}}</h1><br/>",
+			"                                </div>",
+			"                           </React.Fragment>"  ,
+			"                       </React.StrictMode>",
+			"                  </Suspense>" ,
+			"           </ErrorBoundaries>",
+			"       )",
+			"}"    
+		],
+		"description":"Create a function component block of codes that has props as parameter"
+	  },
+
+      
+
+
+	  "Class Component+ Lifecycle":{
+		   "scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+		   "prefix":"react_class_component_and_lifecycle",
+		   "body":[
+			"class Blockcode1 extends React.Component{",
+			"    constructor(props){ ",
+			"        super(props);",
+			"        this.state = {id:'8688549',removeId:false};",
+			"        this.ChangeStateId = this.ChangeStateId.bind(this);",
+			"    }",
+			"     static defaultProps={",
+			"         id:'3456789983478978345'",
+			"     }",
+			"    componentDidMount(){",
+			"        \\$(`[id='content1']`).css({",
+			"            'color':'yellowgreen',",
+			"             'font-size':'30px',",
+			"             'letter-spacing':'6px',",
+			"             'text-shadow':'5px 5px 5px aqua',",
+			"             'padding':'20px'",
+			"        })",
+			"        .on({",
+			"           mouseover:function(){",
+			"                \\$(this).css({",
+			"                    'background-color':'black'",
+			"                   });",
+			"           },",
+			"           mouseleave:function(){" ,
+			"                 \\$(this).css({", 
+			"                     'background-color':'white'",
+			"                   });",
+			"           }",
+			"         });",
+			"\t",
+			"         \\$(`[id='remove_butt']`).css({", 
+			"                'font-size':'35px'", 
+			"          });",
+			"    }",
+			"  /* ",
+			"     static getDerivedStateFromProps(props,state){",
+			"             return {id:props.id}",
+			"      }",
+			"      */",
+			"      shouldComponentUpdate(){",
+			"         return true;",
+			"      }",
+			"      ChangeStateId(){",
+			"          this.setState({id: '34579890987623367878567'});",
+			"      }",
+			"      ChangeContent=(event)=>{",
+			"           $(event.currentTarget).text('Content has been changed!!!');",
+			"      }",
+			"       Remove_Welcome_Component_Content = () => {",
+			"        this.setState({removeId:true});",
+			"       }",
+			"       getSnapshotBeforeUpdate(prevProps,prevState){",
+			"             return console.log(`",
+			"                    Before being updated, props id value was ${prevProps.id},",
+			"                    state id value was ${prevState.id}",
+			"              `);",
+			"       }",
+			"       componentDidUpdate(){",
+			"            return console.log(`",
+			"                 After being updated, props id is ${this.props.id},",
+			"                 state id value is ${this.state.id}.",
+			"            `);",
+			"        }",
+			"        componentWillUnmount(){",
+			"            return console.log(`",
+			"               Successfully remove Blockcode1 component content!!!",
+			"            `);",
+			"        }",
+            "\t",
+			"\t",
+
+			"render(){",
+			"    var WelcomeComponentContent;",
+			"       if(this.state.removeId===false){",
+			"             WelcomeComponentContent = (",
+			"                  <>",
+			"                    <b id='content1'>Welcome to this Component</b><br/>",
+			"                    <h4 onClick={this.ChangeStateId}>State Id: {this.state.id}</h4>",
+			"                    <h4 onClick={this.ChangeContent}>Props Id: {this.props.id}</h4>",
+			"                  </>",
+			"            )",
+			"       }else{",
+			"           WelcomeComponentContent = '';",
+			"       }",
+		
+			"\t",
+			"\t",
+			"     return (",
+			"     <ErrorBoundaries>",
+			"            <Suspense fallback={<h1>Loading... </h1>}>   ",            
+			"\t",			
+			"                <React.StrictMode>",
+			"                        <React.Fragment>",
+	        "                               <div>",
+			"                                   <span id='welcome_component_content_block'>",
+			"                                       {WelcomeComponentContent}",
+			"                                  </span>",
+			"\t",
+			"\t",
+		
+		"                                     <button id='remove_butt' title='remove_butt'",
+		"                                     type='button' dataremovebutt='remove_button_data'",
+		"                                      className='btn btn-danger text-white ",
+		"                                      w3-hover-orange w3-hover-text-white'",
+		"                                      onClick={this.Remove_Welcome_Component_Content}><i className='fa fa-trash'></i> Remove Component</button>",
+		"                                    </div>",
+		"                             </React.Fragment>",
+		"                     </React.StrictMode>",
+		"                   </Suspense>",
+		"             </ErrorBoundaries>",
+		"       )",
+		"   }",
+		"}"
+		
+		
+
+		   ],
+		   "description": "Create a class component block of code that includes props, state, methods, lifecycle methods, and jquery syntax for styling and work with some events"
+	  },
+
+
+
+	  "Cloning Element, Component":{
+		"scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+		"prefix":"react_cloning_element_cloneElement()",
+		"body":[
+            "   {React.cloneElement(${1:<Blockcode0/>},${2:{bg_style1}},${3:<Spinner/>})}",
+			"{/*<Blockcode0/> is element to be cloned. bg_style1 is a variable example that being declare in the",
+			"component that you want to call this syntax, this variable is going to attach a new value for ", 
+			"bg_style1 props of Blockcode0. <Spinner/> is an example of any component that you want to make it become ",
+			"children props of Blockcode0",
+			"*/}",
+			"   {React.cloneElement(<Blockcode0/>,null,null)}"
+		],
+		"description": "Create syntax React.cloneElement() method to clone and create a new element or component"
+	  },
+
+
+
+
+	  "React Children Map":{
+		 "scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+		 "prefix":"react_children_map",
+		 "body":[
+			"    {React.Children.map(children,function(val,index){...})}",
+			"    {/*Invokes a function on every immediate child contained within children",
+			"    children can be <Component/>, props named, props.children, or even variable that is being assigned",
+			"    to an array. If children is <Component/>, make sure this component render other component",
+			"    */}" 
+		 ],
+		 "description": "Create syntax of {React.Children.map(children,function(val,index){...})}"
+	  },
+
+
+	  "React Children Count":{
+		"scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+
+		"prefix":"react_children_count",
+
+		"body":[
+
+		   "        var children = [<${1:HomeButton}/>,<${2:LoadingButton}/>]",
+		   "      console.log(React.Children.count(children));",
+		   "    /*Returns the total number of components in children",
+		   "    */" 
+
+		],
+
+		"description": "Create syntax of {React.Children.count(children)}"
+
+	  },
+
+
+
+	  "React Children toArray":{
+		"scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+
+		"prefix":"react_children_toArray",
+
+		"body":[
+
+						
+				"function MainContent(props){",
+				"   var {children} = props;",
+				"   return (",
+				"         <ErrorBoundaries>",
+				"             <Suspense fallback={<h1>Loading...</h1>}>",
+				"                <React.StrictMode>",
+				"                    <React.Fragment>",
+				"                        {React.Children.toArray(children)[0]}   ", 
+				"                        {/*You can write React.Children.toArray(props.children)[0] if you want*/}", 
+				"                    {/*React.Children.toArray(children)[0] will output HomeButton",
+				"                    React.Children.toArray(children)[1] will output LoadingButton",
+				"                     */}",  
+				"                    </React.Fragment>",
+				"                </React.StrictMode>",
+				"             </Suspense>",
+				"         </ErrorBoundaries>",
+				"       )",
+				"}",
+                "\t",
+                "\t",
+
+				"var HomeButton = ()=> {return <button id='home_butt' title='home_butt' name='home_butt' type='button'",
+				"className='w3-btn w3-ripple w3-green w3-text-white w3-hover-blue w3-hover-text-white'",
+				"datahomebutt='home_button_data' style={{fontSize:'45px'}}>",
+				"<i className='fa fa-home'></i> HOME",
+				"</button>}",
+				"\t",
+                "\t",
+				"var LoadingButton= () => {return <button id='loading_butt1' name='loading_butt1' title='loading_butt1' ",
+				"type='button' className='btn btn-info text-white w3-hover-green'",
+				"dataloadingbutton='loading_button_data' style={{fontSize:'45px'}}>",
+				"<i className='fa fa-spinner fa-spin'></i>  Loading</button> }",
+
+				"\t",
+                "\t",
+
+
+				"var ParenContent =()=>{",
+				"\t",
+                "\t",
+						
+				"     return (",
+				"          <>",
+				"\t",
+                "\t",
+				"           <MainContent>",
+				"               <HomeButton/>",
+				"               <LoadingButton/>",
+				"           </MainContent>",
+				"\t",
+                "\t",
+				"         </>",
+				"     )",
+				"}",
+
+		],
+
+		"description": "Create a block of codes to display how to use {React.Children.count(children)}"
+
+	  },
+
+    "React Map":{
+		"scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+		"prefix":"react_map",
+		"body":[
+            "var ${1:car_model} = ['Lamborghini','Bugatti','BMW','Ford'];", 
+			"{${1:car_model}.map((val,index)=>{"  ,
+			"  return <b key={index}>{val}</b>",
+			"})}",
+		],
+		"description": "Inserting an example of React map that includes an array and a way to use JSX to display the output from React map"
+	},
+
+
+	"React Filter":{
+		"scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+		"prefix":"react_filter",
+		"body":[
+         "const options = ['Bell Pepper', 'Sausage', 'Pepperoni', 'Pineapple'];",
+ 
+         " export function PizzaOrder() {",
+         "     const [selected, setSelected] = useState([]);",
+ 
+		"      const toggleTopping = ({target}) => {",
+		"           const clickedTopping = target.value;",
+		"          setSelected((prev) => {",
+		"          // check if clicked topping is already selected",
+		"             if (prev.includes(clickedTopping)) {",
+		"         // filter the clicked topping out of state",
+		"                 return prev.filter(t => t !== clickedTopping);",
+		"             } else {",
+		"         // add the clicked topping to our state",
+		"                return [clickedTopping, ...prev];",
+		"             }",
+		"          });",
+				"};",
+		
+		"      return (",
+		"          <div>",
+		"              {options.map(option => (",
+		"                  <button className='order_butt btn btn-success text-white",
+		"                   w3-hover-orange w3-hover-text-white' title='order_butt' type='button'",
+		"                   dataorderbutton='order_button_data' value={option}",
+		"                   style={{fontSize:'35px'}}",
+		"                    onClick={toggleTopping} key={option}>",
+		"                     {selected.includes(option) ? 'Remove ' : 'Add '}",
+		"                     {option},",
+		"                     </button>",
+		"               ))}",
+		"               <p>Order a {selected.join(', ')} pizza</p>",
+		"          </div>",
+		"        );",
+		"   }"
+
+		],
+		"description": "create a block of syntaxes of React Filter based on Order Pizza small project"
+	},
+
+
+
+	"React Routing":{
+		"scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+		"prefix": "react_routing",
+		"body":[
+			"import React from 'react';",
+			"import {BrowserRouter,Routes,Route,Outlet,Link} from 'react-router-dom'; ",
+			
+			"function MainContent(){",
+			"    return (",
+			"       <section>",
+			"\t",
+			"\t",
+			"          <nav id='NavbarTopBlock' className='w3-top w3-black'>",
+			"                 <Link to='/' id='home_butt' title='home_butt' type='button' target='_self'",
+			"                 className='btn text-info w3-hover-aqua w3-hover-text-white' style={{fontSize:'30px'}}>",
+			"                     <i className='fa fa-home'></i> HOME",
+			"                 </Link>",
+			"\t",
+			"                 <Link to='/Page1' id='Page1_butt' title='Page1_butt' type='button' target='_self'",
+			"                 className='btn text-warning w3-hover-aqua w3-hover-text-white' style={{fontSize:'30px'}}>",
+			"                     <i className='fa fa-globe'></i> Page1",
+			"                 </Link>",
+			"\t",
+			"                 <Link to='/Page2' id='Page2_butt' title='Page2_butt' type='button' target='_self'",
+			"                   className='btn text-success w3-hover-aqua w3-hover-text-white' style={{fontSize:'30px'}}>",
+			"                     <i className='fa fa-globe'></i> Page2",
+			"                 </Link>",
+			"\t",
+			"\t",
+			"           </nav>",
+			"           <br/><br/>",
+			"\t",
+			"\t",
+			"           <Outlet/>",
+			"       </section>",
+			"     )",
+			"}",
+			"\t",
+			"\t",
+			"function HomeContent(){",
+			"      return <h1>Hello. This is Home Page Content</h1>",
+			"}",
+			"\t",
+			"\t",
+			"function Page1Content(){//You can put this component in external file and import it into your file",
+			"      return <h1>Hello. This is Page1 Content</h1>",
+			"}",
+			"\t",
+			"\t",
+			"function Page2Content(){//You can put this component in external file and import it into your file",
+			"      return <h1>Hello. This is Page2 Content</h1>",
+			"}",
+			"\t",
+			"\t",
+			"function ErrorPageContent(){//You can put this component in external file and import it into your file",
+			"      return <h1>Hello. This is ErrorPage Content</h1>",
+			"}",
+			"\t",
+			"\t",
+			"class Blockcode1 extends Component {",
+			"    render(){",
+			"       return (",
+			"          <div>",
+			"             <BrowserRouter>",
+			"\t",
+			"\t",
+			"                 <Routes>",
+			"\t",
+			"\t",
+			"                     <Route path='/' element={<MainContent/>}>",
+			"                          <Route index element={<HomeContent/>}/>",
+			"                          <Route path='Page1' element={<Page1Content/>}/>",
+			"                          <Route path='Page2' element={<Page2Content/>}/>",
+			"                          <Route path='*' element={<ErrorPageContent/>}/>",
+			"                     </Route>",
+			"\t",
+			"\t",
+			"                 </Routes>",
+			"\t",
+			"\t",
+			"             </BrowserRouter>",
+			"          </div>",
+			"        )",
+			"     }",
+			"}",
+
+
+		],
+		"description": "create different block of codes for using react routing to link different contents from different pages"
+	},
+
+	"props destructoring":{
+		"scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+		"prefix": "react_propsDestructoring",
+		"body":[
+			"var {props_name} = this.props //use this example in class component",
+			"var {props_name} = props //use this example in function component",
+			"//After destructoring props, you can set values or call a props with the props_name"
+
+		],
+		"description": "Adding syntaxes of props destructoring to set value or call any props with shorter name"
+	},
+
+
+	"Setting default props":{
+		"scope":"plaintext,react,reactjs,javascript,typescript,html,php,jquery,angularjs",
+		"prefix": "react_defaultProps",
+		"body":[
+			"//Add syntaxes below to the position beneath the constructor method of a class component",
+			"static defaultProps = {",
+			"  props_name:'value'",
+			"}",
+			"//You can set a default props by calling it as a property of a component like below",
+			"Component_name.defaultProps = {",
+			"  props_name:'value'",
+			"}",
+			"//This method can apply to class or function component"
+		],
+		"description": "Adding syntaxes to set default props"
+	},
+
+
+
+
+   
+   
+   
+
+}

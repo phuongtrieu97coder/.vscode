@@ -1,0 +1,712 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Create Database":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_createDatabase",
+		"body":[
+			"CREATE DATABASE ${1:databasename};"
+		],
+		"description":"Adding query syntaxes of SQL to create database"
+	},
+
+	"Delete Database":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_deleteDatabase",
+		"body":[
+			"DROP DATABASE ${1:databasename};"
+		],
+		"description":"Adding query syntaxes of SQL to delete database"
+	},
+
+
+	"Create Table inside Database":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_createTable",
+		"body":[
+			"CREATE TABLE ${1:tablename} (",
+			"${2:column_name} ${3:datatype} ${4:constraint}",
+			"//if you want to create many columns, please seperate syntaxes with comma",
+			"//the most used datatypes are int, varchar(number), datetime, timestamp, time ",
+			"//constraint can be 'NOT NULL,UNIQUE,PRIMARY KEY,FOREIGN KEY,DEFAULT,CHECK, CREATE INDEX'   ",
+			"/*",
+			"Ex:   ",
+			"        Car_id int AUTO_INCREMENT,",
+			"        Car_model varchar(1000) NOT NULL,",
+			"        InfoUpdateTime timestamp DEFAULT CURRENT_TIMESTAMP(),",
+			"        CONSTRAINT Primary_key PRIMARY KEY(Car_id),",
+			"        CONSTRAINT Unique_key UNIQUE(Car_model,InfoUpdateTime)",
+			"*/",
+			");",
+			"\t",
+			"\t",
+			"//These are syntax to create a table using data from another table",
+			"CREATE TABLE ${1:tablename} AS",
+			"SELECT column_name1, column_name2 ",
+			"FROM another_table_name",
+			"WHERE condition; // ex: WHERE id=2"
+		],
+		"description":"Adding query syntaxes of SQL to create table inside database"
+	},
+
+
+
+	"Delete Table inside Database":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_deleteTable",
+		"body":[
+			"DROP TABLE ${1:tablename};",
+			"// you can use  'TRUNCATE TABLE tablename' syntax to delete all data but remain the table"
+		],
+		"description":"Adding query syntaxes of SQL to create table inside database"
+	},
+
+
+	"Delete data inside Table inside Database":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_deleteDataInsideTable",
+		"body":[
+			"DELETE FROM ${1:tablename}",
+			"WHERE CONDITION;",
+			"//If you don't specify WHERE clause, all data inside this table will be deleted!!!"
+		],
+		"description":"Adding query syntaxes of SQL to create table inside database"
+	},
+
+
+
+
+	"Insert data into Table inside Database":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_insertData_into_Table",
+		"body":[
+            "INSERT INTO ${1:tablename}",
+			"(column_name1,column_name2,..)",
+			"VALUES ('value1','value2');",
+			"/*",
+			"EX:",
+			"INSERT INTO lamborghini",
+			"(Model,Price,Color)",
+			"VALUES ('Lamborghini Aventador 2022','$2,899,999','Blue,Green,Purple,Black,White');",
+			"*/",
+			"//The syntaxes below will insert data into a table where data comes from another table ",
+			"INSERT INTO ${1:tablename}  (column_name1,column_name2,..)",
+			"SELECT column_name1,column_name2,.. FROM another_table_name",
+			"WHERE CONDITION;",
+			"/*",
+			"Ex:",
+			"INSERT INTO lamborghini (Model,Price)",
+			"SELECT Model, Price FROM mclaren",
+			"WHERE car_id = 3;",
+			"These syntaxes take data from Model, and Price columns of mclaren table.",
+			"Then insert it into Model, and Price columns of lamborghini table",
+			"*/"
+		],
+		"description":"Adding query syntaxes of SQL to insert data into table inside database"
+	},
+
+
+
+
+	"Update data of a Table inside Database ":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_updateData_of_Table",
+		"body":[
+           "UPDATE ${1:tablename}",
+		   "SET column_name1='value1', column_name2='value2',...",
+		   "WHERE CONDITION;",
+
+		   "\t",
+		   "//Here is how you can SET column value = data you select from another table",
+		   "UPDATE ${1:tablename}",
+		   "SET column_name1=(SELECT column_name(s) FROM table_name WHERE condition )",
+		   "WHERE CONDITION;",
+		 
+		],
+		"description":"Adding query syntaxes of SQL to update data of a table inside database"
+	},
+
+
+	"Add column to a Table inside Database ":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_addColumn_to_Table",
+		"body":[
+          "ALTER TABLE ${1:tablename}",
+		  "ADD column_name datatype;",
+		  "//ADD many columns",
+		  "ALTER TABLE ${1:tablename}",
+		  "ADD (column_name datatype,column_name2 datatype);",
+		 
+		],
+		"description":"Adding query syntaxes of SQL to add column to a table inside database"
+	},
+
+
+
+	"Delete column of a Table inside Database ":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_deleteColumn_of_Table",
+		"body":[
+          "ALTER TABLE ${1:tablename}",
+		  "DROP COLUMN column_name;",
+		 
+		],
+		"description":"Adding query syntaxes of SQL to delete column of a table inside database"
+	},
+
+
+	"Modify column of a Table inside Database ":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_modifyColumn_to_Table",
+		"body":[
+          "ALTER TABLE ${1:tablename}",
+		  "MODIFY COLUMN column_name datatype;",
+		 
+		],
+		"description":"Adding query syntaxes of SQL to change datatype of a table's column inside database"
+	},
+
+
+
+	"UNIQUE constraint":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+        "prefix":"sql_uniqueConstraint",
+		"body":[
+			"CREATE TABLE testing1 (",
+			"   id int NOT NULL,",
+			"   name varchar(1000),",
+			"   UNIQUE(name)",
+			");",
+			"\t",
+			"//Define UNIQUE constraint on multiple columns",
+			"CREATE TABLE testing1 (",
+			"   id int NOT NULL,",
+			"   name varchar(1000),",
+			"   CONSTRAINT ANY_NAME UNIQUE(id,name)",
+			");",
+			"\t",
+			"\t",
+			"//Add UNIQUE constraint to specific existing column",
+			"ALTER TABLE testing1",
+			"ADD UNIQUE(name);",
+			"\t",
+			"//Add UNIQUE constraint to multiple specific existing columns",
+			"ALTER TABLE testing1",
+			"ADD CONSTRAINT ANY_NAME UNIQUE(id,name);",
+            "\t",
+			"\t",
+			"//Delete UNIQUE constraint",
+			"ALTER TABLE testing1",
+			"DROP INDEX UNIQUE_CONSTRAINT_NAME;"
+
+		],
+		"description": "Insert a block of syntaxes that has create table syntax with UNIQUE constraint, alter table syntax to add or drop UNIQUE constraint  "
+	},
+
+	"PRIMARY KEY constraint":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+        "prefix":"sql_primarykeyConstraint",
+		"body":[
+			"CREATE TABLE testing1 (",
+			"   id int NOT NULL,",
+			"   name varchar(1000),",
+			"   PRIMARY KEY(id)",
+			");",
+			"\t",
+			"//Define PRIMARY KEY constraint on multiple columns",
+			"CREATE TABLE testing1 (",
+			"   id int NOT NULL,",
+			"   name varchar(1000),",
+			"   CONSTRAINT ANY_NAME PRIMARY KEY(id,name)",
+			");",
+			"\t",
+			"\t",
+			"//Add PRIMARY KEY constraint to specific existing column",
+			"ALTER TABLE testing1",
+			"ADD PRIMARY KEY(id);",
+			"\t",
+			"//Add PRIMARY KEY constraint to multiple specific existing columns",
+			"ALTER TABLE testing1",
+			"ADD CONSTRAINT ANY_NAME PRIMARY KEY(id,name);",
+			"\t",
+			"\t",
+			"//Delete PRIMARY KEY constraint",
+			"ALTER TABLE testing1",
+			"DROP PRIMARY KEY;",
+			"\t",
+			"//MySQL uses the AUTO_INCREMENT keyword to perform an auto-increment feature.",
+			"//By default, the starting value for AUTO_INCREMENT is 1, and it will increment by 1 for each new record.",
+			"//EX:",
+			"CREATE TABLE Persons (",
+			"   Personid int NOT NULL AUTO_INCREMENT,",
+			"   LastName varchar(255) NOT NULL,",
+			"   FirstName varchar(255),",
+			"   Age int,",
+			"   PRIMARY KEY (Personid)",
+			");",
+		],
+		"description": "Insert a block of syntaxes that has create table syntax with PRIMARY KEY constraint, alter table syntax to add or drop PRIMARY KEY constraint  "
+	},
+
+
+
+	"FOREIGN KEY constraint":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+        "prefix":"sql_foreignkeyConstraint",
+		"body":[
+			"CREATE TABLE testing1 (",
+			"   id int NOT NULL,",
+			"   name varchar(1000),",
+			"   FOREIGN KEY (name) REFERENCES another_table(name)",
+			");",
+			"\t",
+			"//Define FOREIGN KEY constraint on multiple columns",
+			"CREATE TABLE testing1 (",
+			"   id int NOT NULL,",
+			"   name varchar(1000),",
+			"   CONSTRAINT ANY_NAME FOREIGN KEY(name) REFERENCES another_table(name) ",
+			");",
+			"\t",
+			"\t",
+			"//Add FOREIGN KEY constraint to specific existing column",
+			"ALTER TABLE testing1",
+			"ADD FOREIGN KEY(name) REFERENCES another_table(name);",
+			"\t",
+			"//Add FOREIGN KEY constraint to multiple specific existing columns",
+			"ALTER TABLE testing1",
+			"ADD CONSTRAINT ANY_NAME FOREIGN KEY(name) REFERENCES another_table(name);",
+			"\t",
+			"\t",
+			"//Delete FOREIGN KEY constraint",
+			"ALTER TABLE testing1",
+			"DROP FOREIGN KEY foreignkey_name;"
+		],
+		"description": "Insert a block of syntaxes that has create table syntax with FOREIGN KEY constraint, alter table syntax to add or drop FOREIGN KEY constraint  "
+	},
+
+
+
+
+	"CHECK constraint":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+        "prefix":"sql_checkConstraint",
+		"body":[
+			"CREATE TABLE testing1 (",
+			"   id int NOT NULL,",
+			"   name varchar(1000) CHECK (condition)",
+			");",
+			"\t",
+			"//Define CHECK constraint on multiple columns",
+			"CREATE TABLE testing1 (",
+			"   id int NOT NULL,",
+			"   name varchar(1000),",
+			"   CONSTRAINT  ANY_NAME CHECK (condition) ",
+			");",
+			"\t",
+			"\t",
+			"//Add CHECK constraint to specific existing column",
+			"ALTER TABLE testing1",
+			"ADD CHECK(condition);",
+			"\t",
+			"//Add CHECK constraint to multiple specific existing columns",
+			"ALTER TABLE testing1",
+			"ADD CONSTRAINT ANY_NAME CHECK(condition);",
+			"\t",
+			"\t",
+			"//Delete FOREIGN KEY constraint",
+			"ALTER TABLE testing1",
+			"DROP CHECK check_name;"
+		],
+		"description": "Insert a block of syntaxes that has create table syntax with CHECK constraint, alter table syntax to add or drop CHECK constraint  "
+	},
+
+
+
+	"Select syntax":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+        "prefix":"sql_select",
+		"body":[
+			"/*Select all columns of a table*/",
+			"SELECT * FROM table_name;",
+			"/*Select specific columns of a table*/",
+			"SELECT column_name1,column_name2,.. FROM table_name;",
+			"/*Select specific columns of a table with distinct(difference) values*/",
+			"SELECT DISTINCT column_name1,column_name2,.. FROM table_name;",
+			"/*Select specific columns of a table with specific condition*/",
+			"SELECT DISTINCT column_name1,column_name2,.. FROM table_name WHERE condition;",
+			"\t",
+			"\t",
+			"/*Select specific columns of a table with specific condition combined with 'AND,OR,NOT' clause",
+			"Syntax below is just an instance that combine AND, OR, AND NOT. You can specify any condition you like",
+			"as long as you can use any of those clause to logically search for result",
+			"*/",
+			"SELECT DISTINCT column_name1,column_name2,..  ",
+			"FROM table_name",
+			"WHERE condition1 AND condition2 OR (condition3 AND condition4);",
+			"\t",
+			"\t",
+			"/*Select specific columns of a table with specific condition (can combined or not combined with",
+			"AND,OR,NOT clauses) with limit records",
+			"*/",
+			"SELECT column_name1,column_name2,..",
+			"FROM table_name",
+			"WHERE condition",
+			"LIMIT number;",
+			"\t",
+			"\t",
+			"/*SELECT specific columns or all columns of a table and sort the result-set in ascending or ",
+			"descending order",
+			"*/",
+			"SELECT column_name1,column_name2,...",
+			"FROM table_name",
+			"ORDER BY column_name1,column_name2,... ASC | DESC;",
+			"//selects all customers from the Customers table, sorted by the Country column",
+			"SELECT * FROM Customers",
+			"ORDER BY Country;",
+			"selects all customers from the Customers table, sorted DESCENDING by the Country column",
+			"SELECT * FROM Customers",
+			"ORDER BY Country DESC;",
+			"/*",
+            "selects all customers from the Customers table, sorted by the Country and the CustomerName column.",
+			"This means that it orders by Country, but if some rows have the same Country, it orders them by CustomerName",
+			"*/",
+			"SELECT * FROM Customers",
+			"ORDER BY Country,CustomerName;",
+			"//selects all customers from the Customers table, sorted ascending by the Country ",
+			"//and descending by the CustomerName column",
+            "SELECT * FROM Customers",
+			"ORDER BY Country ASC, CustomerName DESC;",
+
+			"\t",
+			"\t",
+
+			"/*Select specific column(s) of a table with the used of Aliases 'AS' keyword  ",
+			"*/",
+            "//Alias Column Syntax",
+			"SELECT column_name AS alias_name",
+			"FROM table_name;",
+			"//Alias Table Syntax",
+			"SELECT column_name(s)",
+			"FROM table_name AS alias_name;",
+			"\t",
+			"//The following SQL statement creates two aliases, one for the CustomerName column",
+			"//and one for the ContactName column. Note: Single or double quotation marks are required",
+			"// if the alias name contains spaces:",
+			"SELECT CustomerName AS Customer, ContactName AS 'Contact Person' ",
+			"FROM Customers;",
+			"\t",
+            "//The following SQL statement creates an alias named Address ",
+			"//that combine four columns (Address, PostalCode, City and Country):",	
+			"SELECT CustomerName, CONCAT_WS(', ', Address, PostalCode, City, Country) AS Address",
+			"FROM Customers;",		
+            "\t",
+			"//The following SQL statement selects all the orders from the customer with CustomerID=4",
+			"//We use the Customers and Orders tables, and give them the table aliases of c and o respectively",
+			"SELECT o.OrderID, o.OrderDate, c.CustomerName",
+			"FROM Customers AS c, Orders AS o",
+			"WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;",
+			"\t",
+			"\t",
+
+			"/*SELECT specific columns or all columns of a table WHERE specific condition IS NULL ",
+			"or IS NOT NULL",
+			"*/",
+
+			"//The following SQL lists all customers with a NULL value in the Address field",
+			"SELECT CustomerName, ContactName, Address",
+			"FROM Customers",
+			"WHERE Address IS NULL;",
+            
+			"//The following SQL lists all customers with a value in the Address field",
+			"SELECT CustomerName, ContactName, Address",
+			"FROM Customers",
+			"WHERE Address IS NOT NULL;",
+			"\t",
+			"\t",
+
+			"/*SELECT specific columns or all columns of a table WHERE specific condition is BETWEEN ",
+			"something AND something, or NOT BETWEEN something AND something",
+			"*/",
+
+			"SELECT column_name(s)",
+			"FROM table_name",
+			"WHERE condition(s) BETWEEN | NOT BETWEEN value1 AND value2;",
+            
+			"\t",
+			"//The following SQL statement selects all products with a price between 10 and 20",
+			"SELECT * FROM Products",
+   	        "WHERE Price BETWEEN 10 AND 20;",
+
+             "\t",
+			 "//The following SQL statement selects all products with a ProductName",
+			 "// not between Carnarvon Tigers and Mozzarella di Giovanni",
+			 "SELECT * FROM Products",
+		     "WHERE ProductName NOT BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni';",
+
+			 "\t",
+			"\t",
+
+			"/*SELECT specific columns or all columns of a table WHERE specific condition is IN(value1,value2,...) ",
+			"or NOT IN(value1,value2,...)",
+			"*/",
+
+			"SELECT column_name(s)",
+			"FROM table_name",
+			"WHERE column_name IN (value1, value2, ...);",
+			"//or:",
+			"\t",
+			"SELECT column_name(s)",
+			"FROM table_name",
+			"WHERE column_name IN (SELECT STATEMENT);",
+			"\t",
+			"//The following SQL statement selects all customers that are located in Germany, France and UK:",
+			"SELECT * FROM Customers",
+			"WHERE Country IN ('Germany', 'France', 'UK');",
+			"//The following SQL statement selects all customers that are NOT located in Germany, France and UK:",
+			"SELECT * FROM Customers",
+			"WHERE Country NOT IN ('Germany', 'France', 'UK');",
+			"//The following SQL statement selects all customers that are from the same countries as the suppliers:",
+			"SELECT * FROM Customers",
+			"WHERE Country IN (SELECT Country FROM Suppliers);",
+			"\t",
+			"\t",
+
+			"/*SELECT specific columns or all columns of a table WHERE specific condition is LIKE wildcard character ",
+			"or NOT LIKE wildcard character",
+			" 'a%' values start with 'a' ",
+			" '%a' values end with 'a' ",
+			" '%a%' values have 'a' in any position ",
+			" 'a%o' values start with 'a' and end with 'o' ",
+			" '_ondon' values start with any character and followed by 'ondon' ",
+			" 'L_n_on' values start with 'L' character, followed by any character, followed by 'n' character",
+			", followed by any character, followed by 'on'",
+			"*/",
+			
+             "\t",
+			 "//USING LIKE",
+			 "SELECT * FROM tablename",
+			 "WHERE columname(s) LIKE wildcard_char",
+			 "\t",
+			 "//USING NOT LIKE",
+			 "SELECT * FROM tablename",
+			 "WHERE columname(s) NOT LIKE wildcard_char",
+
+		],
+		"description": "Inserting a block of sql syntaxes to select specific table's columns with data"
+	},
+
+	"MIN,MAX,COUNT,AVG,SUM":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+        "prefix":"sql_MinMaxCountAvgSum",
+		"body":[
+			"//The MIN(), and MAX() syntaxes returns the smallest or largest value of the selected column",
+			"SELECT MIN(column_name(s))",
+			"FROM table_name",
+			"WHERE condition",
+			"\t",
+			"SELECT MAX(column_name(s))",
+			"FROM table_name",
+			"WHERE condition",
+			"\t",
+			"\t",
+			"//COUNT() function returns the number of rows that matches a specified criterion",
+			"SELECT COUNT(column_name)",
+			"FROM table_name",
+			"WHERE condition;",
+			"\t",
+			"//The AVG() function returns the average value of a numeric column.",
+			"SELECT AVG(column_name)",
+			"FROM table_name",
+			"WHERE condition;",
+			"\t",
+			"//The SUM() function returns the total sum of a numeric column. ",
+			"SELECT SUM(column_name)",
+			"FROM table_name",
+			"WHERE condition;",
+			"\t",
+			"\t",
+			"//GROUP BY() groups rows that have the same values into summary rows, like",
+			"//find the number of customers in each country",
+			"//GROUP BY() statement is often used with aggregate functions (MAX,MIN,COUNT,AVG,SUM)",
+			"//to group the result-set by one or more columns",
+			"SELECT column_name(s)",
+			"FROM table_name",
+			"WHERE condition",
+			"GROUP BY column_name(s)",
+			"ORDER BY column_name(s);//ORDER BY is optional",
+			"//The following SQL statement lists the numbers of customers in each country",
+			"SELECT COUNT(CustomerID), Country",
+			"FROM Customers",
+			"GROUP BY Country;",
+			"\t",
+			"\t",
+			"//The HAVING clause supports SELECT with WHERE keyword working with aggregate functions  ",
+			"SELECT column_name(s)",
+			"FROM table_name",
+			"WHERE condition  //WHERE is optional",
+			"GROUP BY column_name(s)",
+			"HAVING condition",
+			"ORDER BY column_name(s); //ORDER BY is optional",
+			"\t",
+			"//EX:",
+			"SELECT COUNT(Customer_id), Car_model",
+			"FROM order_list ",
+			"WHERE Order_id  <> 'SDGDHFGRYRTUI'",
+			"GROUP BY Car_model",
+			"HAVING COUNT(Customer_id) <10",
+			"ORDER BY Customer_id DESC;",
+			"//EX2:",
+			"SELECT COUNT(Customer_id), order_list.Car_model AS 'Car Model', lamborghini.Price AS 'Car Price'",
+			"FROM order_list",
+			"INNER JOIN lamborghini ON order_list.Car_id = lamborghini.Car_id",
+			"WHERE Customer_name IS NOT NULL",
+			"GROUP BY Car_model",
+			"HAVING COUNT(Customer_id) > 5",
+			"ORDER BY Customer_id ASC;",
+
+		],
+		"description": "Inserting a block of sql syntaxes that contains MIN(),MAX(),COUNT(),AVG(),and SUM()"
+	},
+
+    "Join to combine rows from two or more table, based on related columns between them":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+        "prefix":"sql_join",
+		"body":[
+			"//INNER JOIN keyword selects records that have matching values in both tables",
+			"SELECT column_name(s)",
+			"FROM table1",
+			"INNER JOIN table2",
+			"ON table1.column_name = table2.column_name;",
+			"//column_name in  INNER JOIN syntax must be different from column_name in SELECT syntax",
+			"\t",
+			"//Here is how to inner join between 3 tables",
+			"SELECT column_name(s)",
+			"FROM (",
+			"(table1 INNER JOIN table2 ON table1.column_name = table2.column_name)",
+			"INNER JOIN table3 ON table1.column_name = table3.column_name",
+			");",
+			"\t",
+			"\t",
+			"//LEFT JOIN keyword returns all records from the left table(table1), and the matching ",
+			"// records(if any) from the right table(table2)",
+			"//Note: The LEFT JOIN keyword returns all records from the left table (table1)",
+			"//, even if there are no matches in the right table (table2)",
+			"SELECT column_name(s)",
+			"FROM table1",
+			"LEFT JOIN table2",
+			"ON table1.column_name = table2.column_name;",
+			"\t",
+			"\t",
+			"//RIGHT JOIN keyword returns all records from the right table(table2), and the matching ",
+			"// records(if any) from the left table(table1)",
+			"//Note: The RIGHT JOIN keyword returns all records from the right table (table2)",
+			"//, even if there are no matches in the left table (table1)",
+			"SELECT column_name(s)",
+			"FROM table1",
+			"RIGHT JOIN table2",
+			"ON table1.column_name = table2.column_name;",
+
+		],
+		"description": "Adding a block of sql syntaxes that includes INNER JOIN, LEFT JOIN, RIGHT JOIN, CROSS JOIN,SELF JOIN"
+	},
+
+
+	"SELECT with UNION syntax":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+        "prefix":"sql_selectUnion",
+		"body": [
+			"/*The UNION operator is used to combine the result-set of two or more SELECT statements.",
+			"Every SELECT statement within UNION must have the same number of columns",
+			"The columns must also have similar data types",
+			"The columns in every SELECT statement must also be in the same order",
+			"*/",
+			"SELECT column_name(s) FROM table1 WHERE condition",
+			"UNION",
+			"SELECT column_name(s) FROM table2 WHERE condition;",
+			"\t",
+			"//The UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL",
+			"SELECT column_name(s) FROM table1 WHERE condition",
+			"UNION ALL",
+			"SELECT column_name(s) FROM table2 WHERE condition;",
+
+		],
+		"description": "Adding a block of sql syntaxes that includes SELECT syntax with UNION to combine the result-set of two or more SELECT statements"
+	},
+
+
+
+	"CASE syntax":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_case",
+		"body":[
+			"CASE",
+    		"    WHEN condition1 THEN result1",
+    		"    WHEN condition2 THEN result2",
+    		"    WHEN conditionN THEN resultN",
+    		"    ELSE result",
+			"END",
+			"//EX:",
+			"SELECT Customer_id,Name, ",
+			"CASE ",
+			"    WHEN Customer_id < 20000000 THEN 'COMMERCIAL'",
+			"    WHEN Customer_id >20000000 THEN 'VIP'",
+			"    ELSE 'UNKNOWN'",
+			"END AS Account_Type",
+			"FROM customers;",
+
+		],
+		"description": "Adding a block of sql CASE syntaxes to provide conditions and return a value when the first condition is met"
+	},
+
+
+	"VIEW syntax":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_view",
+		"body":[
+           "/*",
+		   "A view is a virtual table based on the result-set of an SQL statement",
+		   "A view contains rows and columns, just like a real table.",
+		   "The fields in a view are fields from one or more real tables in the database.",
+		   "A view always shows up-to-date data",
+		   "*/",
+		   "\t",
+		   "//CREATE VIEW syntax",
+		   "CREATE VIEW view_name AS",
+			"SELECT column1, column2, ...",
+			"FROM table_name",
+			"WHERE condition;",
+			"\t",
+			"//EX:",
+			"CREATE VIEW Movie_Selection AS",
+			"SELECT Movie_id, Title FROM action_adventure;",
+			"\t",
+		   "//CREATE OR REPLACE VIEW syntax.",
+		   "//Helps create a new view or update select data from an existing view",
+		    "CREATE OR REPLACE VIEW view_name AS",
+			"SELECT column1, column2, ...",
+			"FROM table_name",
+			"WHERE condition;",
+			"\t",
+			"//Dropping a view syntax",
+			"DROP VIEW view_name;"
+		],
+		"description": "Adding a block of sql CREATE VIEW | CREATE OR REPLACE VIEW  | DROP VIEW syntaxes to create a view or delete a view. A view is a virtual table based on the result-set of an SQL statement"
+	}
+
+
+	
+}

@@ -1,0 +1,911 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Main Basic Syntax":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_mainsyntax",
+		"body":[
+			"const http = require('http');",
+			"//create a server object",
+			"http.createServer(function(req,res){",
+			"    res.writeHead(200,{'Content-Type':'text/html'});",
+			"//writeHead means write to HTTP Header, status code 200 means all is Ok. The second argument is an object containing the response headers.",
+			"    res.write('Hello World'); // write the response to the client",
+			"    res.end();// end the response",
+			"}).listen(8080);" 
+		],
+		"description": "Create Main Basic Nodejs Syntaxes"
+	},
+
+
+	"Read File Syntax":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_readFile",
+		"body":[
+			"const http = require('http');",
+			"const fs = require('fs');",
+			"http.createServer(function(req,res){",
+			"    fs.readFile('index.html',function(err,data){",
+			"        res.writeHead(200,{'Content-Type':'text/html'});",
+			"        res.write(data);",
+			"        return res.end();",
+			"    });",
+			"}).listen(8080);",
+		],
+		"description": "Create Nodejs Syntaxes to read files"
+	},
+
+
+	"Create File and update content with fs.appendFile() Syntax":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_appendFile_create_update_files",
+		"body":[
+			"const fs = require('fs');",
+			"fs.appendFile('${1:text1.txt}','${2:Hello World}',function(err){",
+			"    if(err) throw err;",
+			"    console.log(`Successfully append contents to '${1:text1.txt}' file!!!`);",
+			"});"
+		],
+		"description": "Insert fs.appendFile() Nodejs Syntaxes to create files or update content files"
+	},
+
+
+
+	"Create or Open File fs.open() Syntax":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_fs.open()_open_create__files",
+		"body":[
+			"const fs = require('fs');",
+			"fs.open('${1:text1.txt}','w',function(err,file){",
+			"    if(err) throw err;",
+			"    console.log(`Successfully open or create '${1:text1.txt}' file!!!`);",
+			"});"
+		],
+		"description": "Insert fs.open() Nodejs Syntaxes to create files or open files"
+	},
+
+
+
+	"Write or Update Content Of A File with fs.writeFile() Syntax":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_writeFile_write_update__content_files",
+		"body":[
+			"const fs = require('fs');",
+			"fs.writeFile('${1:text1.txt}','${2:Hello World}',function(err){",
+			"    if(err) throw err;",
+			"    console.log(`Successfully write content to or update content of '${1:text1.txt}' file!!!`);",
+			"});"
+		],
+		"description": "Insert fs.writeFile() Nodejs Syntaxes to write content to or update content of files"
+	},
+
+
+
+	"Rename A File with fs.rename() Syntax":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_fs.rename()_rename_files",
+		"body":[
+			"const fs = require('fs');",
+			"fs.rename('${1:text1.txt}','${2:text_1.txt}',function(err){",
+			"    if(err) throw err;",
+			"    console.log(`Successfully rename '${1:text1.txt}' file!!!`);",
+			"});"
+		],
+		"description": "Insert fs.rename() Nodejs Syntaxes to rename files"
+	},
+
+
+	"Delete A File with fs.unlink() Syntax":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_fs.unlink()_delete_files",
+		"body":[
+			"const fs = require('fs');",
+			"fs.unlink('${1:text1.txt}',function(err){",
+			"    if(err) throw err;",
+			"    console.log(`Successfully delete '${1:text1.txt}' file!!!`);",
+			"});"
+		],
+		"description": "Insert fs.unlink() Nodejs Syntaxes to delete files"
+	},
+
+
+
+
+	"Create URL Module Block of Syntaxes":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_url_module",
+		"body":[
+			"const url = require('url');",
+			"const link1 = 'https://localhost:8080/index.html?month=July&year=2022';",
+			"const q = url.parse(link1,true);",
+			"console.log(q.host);//returns localhost:8080",
+			"console.log(q.pathname);//returns /index.html",
+			"console.log(q.search);//returns ?month=July&year=2022",
+			"console.log(q.query);//returns [Object: null prototype] { month: 'July', year: '2022' }",
+			"console.log(q.query.year);//returns 2022",
+			"console.log(q.query.month);//returns July"
+		],
+		"description": "Insert URL Module Nodejs Syntaxes to get 'host','pathname','search','query',...values from URL"
+	},
+
+
+	"Create Nodejs File Server Request Block Of Codes":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_file_server_request",
+		"body":[
+			"const http = require('http');",
+			"const fs  = require('fs');",
+			"const url = require('url');",
+			"\t",
+			"http.createServer(function(req,res){",
+			"    const q = url.parse(req.url,true);",
+			"    const filename = '.'+q.pathname;",
+			"    fs.readFile(filename,function(err,data){",
+			"       if(err){",
+			"          res.writeHead(400,{'Content-Type':'text/html'});",
+			"          res.write(`404 NOT FOUND!!!`);",
+			"       }else{",
+			"          res.writeHead(200,{'Content-Type':'text/html'});",
+			"          res.write(data);",
+			"          return res.end();",
+			"       }",
+			"    });",
+			"}).listen(8080);"
+			
+		],
+		"description":"Create a block of Nodejs File Server Request syntaxes to read different file contents based on different file name attached to the URL"
+	},
+
+
+
+	"Create Custom Nodejs Events With EventEmitter Object":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_custom_events_with_EventEmitter() object",
+		"body":[
+			"const events = require('events');",
+			"const eventEmitter = new events.EventEmitter();",
+			"\t",
+			"const ScreamEventHandler = function(){",
+			"    console.log('I hear a scream');",
+			"};",
+			"\t",
+			"eventEmitter.on('scream',ScreamEventHandler);",
+			"\t",
+			"eventEmitter.emit('scream');",
+			
+		],
+		"description":"Create a block of Nodejs EventEmitter() syntaxes to create custom Nodejs events handler"
+	},
+
+
+	
+
+	"fs.createReadStream() object with fires Nodejs Events":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_fs.createReadStream() object",
+		"body":[
+			"const fs = require('fs');",
+			"const rs = fs.createReadStream('./text1.txt');",
+			"rs.on('open',function(){",
+			"    console.log('The file is open!!!');",
+			"});"
+			
+		],
+		"description":"Create a block of fs.createReadStream() Nodejs syntaxes to create fires events when opening and closing a file"
+	},
+
+
+
+	"ExpressJS connect static files":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"expressjs_connect_static_files",
+		"body":[
+		"const express = require('express');",
+		"const app = express();",
+		"const path = require('path');",
+		"\t",
+		"app.use(express.static('./'));",
+		"app.use('/image',express.static(path.join(__dirname,'image')));",
+		"\t",
+		"app.listen(8080,()=>{",
+		"    console.log('Successfully running the program on Port 8080!!!');",
+		"});"
+			
+		],
+		"description":"Create a block of ExpressJS syntaxes to connect to static files"
+	},
+
+
+
+
+
+
+	"ExpressJS Access And Connect Webpages With Special Keywords":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"expressjsAccessFilesSpecialKeywords",
+		"body":[
+		
+			"app.get('${1:/}',function(req,res){",
+			"   res.sendFile('${2:./index.html}',{root:__dirname});",
+			"});",
+			"app.get('${3:/idx2}',function(req,res){",
+			"   res.sendFile('${4:./index2.html}',{root:__dirname});",
+			"});"
+			
+		],
+		"description":"Create a block of ExpressJS syntaxes to access Webpages or files with special keywords"
+	},
+
+
+
+
+
+	"Nodejs Form Uploading Files":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_formFileUpload",
+		"body":[
+			"const http = require('http');",
+			"const formidable = require('formidable');",
+			"const fs = require('fs');",
+			"http.createServer(function(req,res){",
+			"      if(req.url == '/index2.html'){",
+			"          const form= new formidable.IncomingForm();",
+			"          form.parse(req,function(err,fields,files){",
+			"               const oldpath = files.file1.filepath;",
+			"               const newpath = 'image/'+files.file1.originalFilename;",
+			"               fs.rename(oldpath,newpath,function(err){",
+			"                   if(err) throw err;",
+			"                   res.write('Finish!!!');",
+			"                   return res.end();",
+			"               });",
+			"          });",
+			"     }else{",
+			"          res.writeHead(200,{'Content-Type':'text/html'});",
+			"          res.write(`",
+			"\t",
+					  
+			"           <form id='form1' name='form1' title='form1'",
+			"           action='index2.html'",
+			"           method='post' target='_self' enctype='multipart/form-data'",
+			"           style='width:600px;border:2px solid green;padding:20px;font-size:25px'",
+			"           data-form1='form1_data'>",
+			"\t",
+			"\t",
+			"               <input id='file_input' title='passfile input' name='file1' type='file'",
+			"             data-file-input='file_input_data'>",
+			"\t",
+			
+			"               <button id='upload_butt1' name='upload_butt1' title='upload_button 1'",
+			"               type='submit' ",
+			"               style='width:100%;font-size:25px;background-color:aqua;color:white' data-upload-butt='upload_button_data'>",
+			"                UPLOAD</button>",
+			"\t",
+			"\t",
+			
+			"           </form>",
+			"         `);",
+			"          return res.end();",
+			"     }",
+			"}).listen(8080);"
+			
+		],
+		"description":"Create a block of NodeJS syntaxes to upload file with a normal form"
+	},
+
+    "Connect to MongoDB Database with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_connectMongoDBDatabase",
+		"body":[
+			"var MongoClient = require('mongodb').MongoClient;",
+			"var url = 'mongodb+srv://${1:<Username>}:${2:<Passcode>}@cluster0.vvbyi.mongodb.net/?retryWrites=true&w=majority';",
+			"\t",
+			"\t",
+			"MongoClient.connect(url,function(err,db){",
+			"    if(err) throw err;",
+			"    console.log('Connected Successfully!!!')",
+			"    db.close()",
+			"});",
+		],
+		"description": "Inserting a block of Nodejs syntaxes to connect to MongoDB database"
+	},
+
+
+	"Create MongoDB Database+Collection with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_createDatabaseMongoDB",
+		"body":[
+			"var MongoClient = require('mongodb').MongoClient;",
+			"var url = 'mongodb+srv://${1:<Username>}:${2:<Passcode>}@cluster0.vvbyi.mongodb.net/?retryWrites=true&w=majority';",
+			"\t",
+			"\t",
+			"MongoClient.connect(url,function(err,db){",
+			"    if(err) throw err;",
+			"    var dbo = db.db('${3:Database_name}');",
+			"    dbo.createCollection('${4:Collection_name}',function(err,res){",
+			"        if(err) throw err;",
+			"        console.log(`Successfully created or connected to '${3:Database_name}' database!!!`);",
+			"        console.log('Customers collection created!!!');",
+			"        db.close();",
+			"    });",
+			"});",
+		],
+		"description": "Inserting a block of Nodejs syntaxes to create MongoDB database and collection"
+	},
+
+
+	"Insert data content into MongoDB Database's Collection with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_insertDataToMongoDB_Database's_Collection",
+		"body":[
+			"var MongoClient = require('mongodb').MongoClient;",
+			"var url = 'mongodb+srv://${1:<Username>}:${2:<Passcode>}@cluster0.vvbyi.mongodb.net/?retryWrites=true&w=majority';",
+			"\t",
+			"\t",
+			"MongoClient.connect(url,function(err,db){",
+			"     if(err) throw err;",
+			"     var dbo = db.db('${3:THP_Restaurant}');",
+			"     var customer1 = {",
+			"        name:'${4:name}'",
+			"     } ",
+			"     dbo.collection('${5:Customers}').insertOne(customer1,function(err,res){",
+			"        if(err) throw err;",
+			"        console.log(`",
+			"        Successfully inserted customer1 object content ",
+			"        into ${5:Customers} Collection of ${3:THP_Restaurant} database!!!`);",
+			"        db.close();",
+			"    });",
+			"});",
+
+			"\t",
+			"\t",
+			"//The example below can be used if you want to insert many data at the same time",
+			
+			"MongoClient.connect(url,function(err,db){",
+			"   if(err) throw err;",
+			"   var dbo = db.db('THP_Restaurant');",
+			"   let VIPCustomers = [",
+			"     {",
+			"       _id:1,name:'Mike',gender:'male',age:29,",
+			"       favoriteMeals:['Bread','Pork Cuisine','Chicken Cuisine','Beef Cuisine','Rice noodle soups']",
+			"     },",
+			"     {",
+			"       _id:2,name:'Jenny',gender:'female',age:42,",
+			"       favoriteMeals:['Noodle soups','Pork Cuisine','Chicken Cuisine','Beef Cuisine','Rice noodle soups']",
+			"     },",
+			"     {",
+			"       _id:3,name:'Susan',gender:'female',age:36,",
+			"       favoriteMeals:['Hamburger','Pork Cuisine','Chicken Cuisine','Beef Cuisine','Rice noodle soups']",
+			"     }",
+			"   ];",
+			"   dbo.collection('Customers').insertMany(VIPCustomers,function(err,res){",
+			"     if(err) throw err;",
+			"     console.log('Successfully inserted VIP customers data contents into Customer Collection of THP_Restaurant Database!!!');",
+			"     console.log('Number of VIP customers inserted are: '+res.insertedCount);",
+			"     console.log(res);",
+			"     db.close();",
+			"   });",
+			"});",
+		],
+		"description": "Inserting a block of Nodejs syntaxes to insert data content to MongoDB Database's Collection"
+	},
+
+
+
+
+	"Find data content of MongoDB Database's Collection with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_FindDataOfMongoDB_Database's_Collection",
+		"body":[
+			"var MongoClient = require('mongodb').MongoClient;",
+			"var url = 'mongodb+srv://${1:<Username>}:${2:<Passcode>}@cluster0.vvbyi.mongodb.net/?retryWrites=true&w=majority';",
+			"\t",
+			"\t",
+			
+			"MongoClient.connect(url,function(err,db){",
+			"    if(err) throw err;",
+			"    var dbo = db.db('THP_Restaurant');",
+			"    dbo.collection('Customers').findOne({},function(err,result){",
+			"       if(err) throw err;",
+			"       console.log(result);",
+			"       console.log(result._id);",
+			"       console.log(result.name);",
+			"       console.log(result.favoriteMeals);",
+			"       db.close();",
+			"    });",
+			"});",
+
+			"\t",
+			"\t",
+			"//The example below can be used if you want to find all data at the same time",
+			
+			
+			"MongoClient.connect(url,function(err,db){",
+			"   if(err) throw err;",
+			"   var dbo = db.db('THP_Restaurant');",
+			"   dbo.collection('Customers').find({}).toArray(function(err,result){",
+			"      if(err) throw err;",
+			"      console.log(result);",
+			"      db.close();",
+			"   });",
+			"});",
+
+			"\t",
+			"\t",
+			"//The example below can be used if you want to find a list of data properties and its value",
+			
+			"MongoClient.connect(url,function(err,db){",
+			"    if(err) throw err;",
+			"    var dbo = db.db('THP_Restaurant');",
+			"//{projection:{_id:0,name:1,gender:1}  provide _id:0 to exclude it from the output",
+			"//Different property can not have value 0. If you want the program return something,",
+			"//please specify its properties with value 1",
+			"    dbo.collection('Customers').find({},{projection:{_id:0,name:1,gender:1}})",
+			"    .toArray(function(err,result){",
+			"        if(err) throw err;",
+			"        console.log(result);",
+			"        console.log(result[2].name);",
+			"        db.close();",
+			"    });",
+			"});"
+
+
+
+		],
+		"description": "Inserting a block of Nodejs syntaxes to find data content of MongoDB Database's Collection"
+	},
+
+
+
+
+
+	"Query Find data content of MongoDB Database's Collection with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_QueryFindDataOfMongoDB_Database's_Collection",
+		"body":[
+			"var MongoClient = require('mongodb').MongoClient;",
+			"var url = 'mongodb+srv://${1:<Username>}:${2:<Passcode>}@cluster0.vvbyi.mongodb.net/?retryWrites=true&w=majority';",
+			"\t",
+			"\t",
+			
+			
+			"MongoClient.connect(url,function(err,db){",
+			"    if(err) throw err;",
+			"    let dbo = db.db('THP_Restaurant');",
+			"    const search_based_on_age = {age:42};",
+			"    dbo.collection('Customers').find(search_based_on_age).toArray(function(err,res){",
+			"        if(err) throw err;",
+			"        console.log(res);",
+			"        db.close();",
+			"    });",
+			" \t   ",
+			"});",
+
+			"\t",
+			"\t",
+			"//The example below can be used if you want to Query find data with Regular Expressions",
+			
+			
+			"MongoClient.connect(url,function(err,db){",
+			"   if(err) throw err;",
+			"   var dbo = db.db('THP_Restaurant');",
+			"   const search_based_on_name = {name:/^S/}; // ^S means it start with letter S",
+			"   dbo.collection('Customers').find(search_based_on_name).toArray(function(err,result){",
+			"      if(err) throw err;",
+			"      console.log(result);",
+			"      db.close();",
+			"   });",
+			"});",
+
+
+
+		],
+		"description": "Inserting a block of Nodejs syntaxes to find data content of MongoDB Database's Collection"
+	},
+
+
+
+
+
+	"Sort data content of MongoDB Database's Collection with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_sortDataOfMongoDB_Database's_Collection",
+		"body":[
+			"var MongoClient = require('mongodb').MongoClient;",
+			"var url = 'mongodb+srv://${1:<Username>}:${2:<Passcode>}@cluster0.vvbyi.mongodb.net/?retryWrites=true&w=majority';",
+			"\t",
+			"\t",
+			"MongoClient.connect(url,function(err,db){",
+			"    if(err) throw err;",
+			"    let dbo = db.db('THP_Restaurant');",
+			"    const sort_based_on_name = {name:1}; //1 is ascending | -1 is descending",
+			"    dbo.collection('Customers').find().sort(sort_based_on_name).toArray(function(err,res){",
+			"        if(err) throw err;",
+			"        console.log(res);",
+			"        db.close();",
+			"    });",
+			" \t   ",
+			"});",
+
+		],
+		"description": "Inserting a block of Nodejs syntaxes to sort data content of MongoDB Database's Collection"
+	},
+
+
+
+	"Delete data content of MongoDB Database's Collection with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_deleteDataOfMongoDB_Database's_Collection",
+		"body":[
+			"var MongoClient = require('mongodb').MongoClient;",
+			"var url = 'mongodb+srv://${1:<Username>}:${2:<Passcode>}@cluster0.vvbyi.mongodb.net/?retryWrites=true&w=majority';",
+			"\t",
+			"\t",
+			"MongoClient.connect(url,function(err,db){",
+			"   if(err) throw err;",
+			"   let dbo = db.db('THP_Restaurant');",
+			"   const query1 = {_id: 1}",
+			"   dbo.collection('DailyAndTimeComing').deleteOne(query1,function(err,res){",
+			"      if(err) throw err;",
+			"      console.log('1 item deleted!!!');",
+			"      db.close();",
+			"   });",
+			"});",
+			"\t",
+			"//below is block of syntaxes to delete many data",
+			"\t",
+			
+			"MongoClient.connect(url,function(err,db){",
+			"   if(err) throw err;",
+			"   let dbo = db.db('THP_Restaurant');",
+			"   const query1 = {name: /^S/}",
+			"   dbo.collection('DailyAndTimeComing').deleteMany(query1,function(err,obj){",
+			"      if(err) throw err;",
+			"      console.log(obj.deletedCount +' document(s) deleted!!!');",
+			"      db.close();",
+			"   });",
+			"});",
+
+		],
+		"description": "Inserting a block of Nodejs syntaxes to delete data content of MongoDB Database's Collection"
+	},
+
+
+
+
+
+	"Delete Collection of specific MongoDB Database with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_deleteCollectionOfMongoDB_Database's_Collection",
+		"body":[
+			"var MongoClient = require('mongodb').MongoClient;",
+			"var url = 'mongodb+srv://${1:<Username>}:${2:<Passcode>}@cluster0.vvbyi.mongodb.net/?retryWrites=true&w=majority';",
+			"\t",
+			"\t",
+			
+			"MongoClient.connect(url,function(err,db){",
+			"   if(err) throw err;",
+			"   let dbo = db.db('THP_Restaurant');",
+			"   dbo.dropCollection('Customers',function(err,delOk){",
+			"       if(err) throw err;",
+			"       if(delOk){console.log('Customers collection deleted!!!')};",
+			"       db.close();",
+			"   });",
+			"   /*",
+			"   ex2:",
+			"   dbo.collection('Customers').drop(function(err,delOk){",
+			"      ...",
+			"   });",
+			"   ",
+			"   */",
+			"});",
+
+
+
+
+		],
+		"description": "Inserting a block of Nodejs syntaxes to delete Collection of specific MongoDB Database"
+	},
+
+
+
+
+	"Update data content of MongoDB Database's Collection with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_updateDataOfMongoDB_Database's_Collection",
+		"body":[
+			"var MongoClient = require('mongodb').MongoClient;",
+			"var url = 'mongodb+srv://${1:<Username>}:${2:<Passcode>}@cluster0.vvbyi.mongodb.net/?retryWrites=true&w=majority';",
+			"\t",
+			"\t",
+		
+			"MongoClient.connect(url,function(err,db){",
+			"   if(err) throw err;",
+			"   let dbo = db.db('THP_Restaurant');",
+			"   let query1 = {name:'Jenny'};",
+			"   let UpdateAge = {\\$set: {age:45}};",
+			"   dbo.collection('Customers').updateOne(query1,UpdateAge,function(err,res){",
+			"      if(err) throw err;",
+			"      console.log(`Successfully updated Jenny's age !!!`);",
+			"      db.close();",
+			"   });",
+			"});",
+			"\t",
+			"//below is block of syntaxes to update many data",
+			"\t",
+			
+			"MongoClient.connect(url,function(err,db){",
+			"   if(err) throw err;",
+			"   let dbo = db.db('THP_Restaurant');",
+			"   let query1 = {name:/^J/};",
+			"   let UpdateAge = {\\$set: {age:45}};",
+			"   dbo.collection('Customers').updateMany(query1,UpdateAge,function(err,res){",
+			"      if(err) throw err;",
+			"      console.log('Successfully updated ages !!!');",
+			"      db.close();",
+			"   });",
+			"});",
+
+		],
+		"description": "Inserting a block of Nodejs syntaxes to update data content of MongoDB Database's Collection"
+	},
+
+	"Limit output data content of MongoDB Database's Collection with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_limitOuputDataOfMongoDB_Database's_Collection",
+		"body":[
+			"var MongoClient = require('mongodb').MongoClient;",
+			"var url = 'mongodb+srv://${1:<Username>}:${2:<Passcode>}@cluster0.vvbyi.mongodb.net/?retryWrites=true&w=majority';",
+			"\t",
+			"\t",
+		
+			"MongoClient.connect(url,function(err,db){",
+			"   if(err) throw err;",
+			"   let dbo = db.db('Carinfo');",
+			"   dbo.collection('collection1').find().limit(3).toArray(function(err,res){",
+			"// 3 will output 3 documents",
+			"      if(err) throw err;",
+			"      console.log(res);",
+			"      db.close();",
+			"   });",
+			"\t ",
+			" });",
+
+		],
+		"description": "Inserting a block of Nodejs syntaxes to update data content of MongoDB Database's Collection"
+	},
+
+
+
+	"Perform a basic left join from MongoDB's collection document":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_leftjoin_basic",
+		"body":[
+			"MongoClient.connect(url,function(err,db){",
+			"   if(err) throw err;",
+			"   const dbo = db.db('THP_Restaurant');",
+			"   dbo.collection('Customers').aggregate([",
+			"       {",
+			"           \\$lookup:{",
+			"              from:'DailyAndTimeComing',",
+			"              localField:'timecoming_id',//field in DailyAndTimeComing collection",
+			"              foreignField:'customer_id',//field in Customers collection",
+			"              as:'DailyTimeComing'//property to insert to your document",
+			"//localField in your collection's document must have one or more value  ",
+			"//as same as foreignField in another collection's document",
+			"           }",
+			"       }",
+			"   ]).toArray(function(err,res){",
+			"      if(err) throw err;",
+			"      console.log(res);",
+			"      db.close();",
+			"   });",
+			"});",
+		],
+		"description": "Inserting a block of Nodejs syntaxes to perform a left join"
+	},
+
+
+
+	"Connect to MySQL Database with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_connectMySQLDatabase",
+		"body":[
+			"let mysql = require('mysql');",
+			"\t",
+			"\t",
+			"let con = mysql.createConnection({",
+			"   host:'${1:yourhostname}',",
+			"   user:'${2:yourusername}',",
+			"   password:'${3:yourpassword}'",
+			"});",
+			"\t",
+			"\t",
+			"con.connect(function(err){",
+			"   if(err) throw err;",
+			"   console.log('Connected!!!');",
+			"});",
+
+		],
+		"description": "Inserting a block of Nodejs syntaxes to connect to MySQL database"
+	},
+
+
+	"Create MySQL Database with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_createMySQLDatabase",
+		"body":[
+			"let mysql = require('mysql');",
+			"\t",
+			"\t",
+			"let con = mysql.createConnection({",
+			"   host:'${1:yourhostname}',",
+			"   user:'${2:yourusername}',",
+			"   password:'${3:yourpassword}'",
+			"});",
+			"\t",
+			"\t",
+			"con.connect(function(err){",
+			"   if(err) throw err;",
+			"   console.log('Connected to ${2:yourusername} user admin!!!');",
+			"   con.query('CREATE DATABASE ${4:Databasename}',function(err,res){",
+			"      if(err) throw err;",
+			"      console.log('${4:Databasename} Database created!!!');",
+			"      console.log(res);",
+			"   });",
+			"});",
+
+		],
+		"description": "Inserting a block of Nodejs syntaxes to create MySQL database"
+	},
+
+	
+
+
+	"Create a table for a specific MySQL Database with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_createTableForMySQLDatabase",
+		"body":[
+			"let mysql = require('mysql');",
+			"\t",
+			"\t",
+			"let con = mysql.createConnection({",
+			"   host:'${1:yourhostname}',",
+			"   user:'${2:yourusername}',",
+			"   password:'${3:yourpassword}',",
+			"   database:'${4:yourdatabasename}'",
+			"});",
+			"\t",
+			"\t",
+			"con.connect(function(err){",
+			"   if(err) throw err;",
+			"   console.log('Connected to ${2:yourusername} user admin!!!');",
+			"   const query1 = `",
+			"   CREATE TABLE ${5:tablename} ( ",
+			"      column_name1 datatype1 constraint,",
+			"      column_name2 datatype2 constraint,",
+			"      Additional_constraint",
+			"   );",
+			"`",
+			"   con.query(query1,function(err,res){",
+			"      if(err) throw err;",
+			"      console.log('${5:tablename} table created!!!');",
+			"      console.log(res);",
+			"   });",
+			"});",
+			"\t",
+			
+			
+
+		],
+		"description": "Inserting a block of Nodejs syntaxes to create a table for a specific MySQL database"
+	},
+
+	
+	"Insert data to a table of a specific MySQL Database with NodeJS":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_insertDataToTableForMySQLDatabase",
+		"body":[
+			"let mysql = require('mysql');",
+			"\t",
+			"\t",
+			"let con = mysql.createConnection({",
+			"   host:'${1:yourhostname}',",
+			"   user:'${2:yourusername}',",
+			"   password:'${3:yourpassword}',",
+			"   database:'${4:yourdatabasename}'",
+			"});",
+			"\t",
+			"\t",
+			"con.connect(function(err){",
+			"   if(err) throw err;",
+			"   console.log('Connected to ${2:yourusername} user admin!!!');",
+			"   const query1 = `",
+			"   INSERT INTO ${5:tablename} ( ",
+			"      column_name1,",
+			"      column_name2,",
+			"   )",
+			"   VALUES ('value1','value2');",
+			"`",
+			"   con.query(query1,function(err,res){",
+			"      if(err) throw err;",
+			"      console.log('Inserted data into ${5:tablename} table!!!');",
+			"      console.log(res);",
+			"   });",
+			"});",
+			"\t",
+			
+			"//The example below will show you how to insert multiple data",
+			"con.connect(function(err){",
+			"   if(err) throw err;",
+			"   console.log('Connected to movies_collection database!!!');",
+			"   const query1 = `",
+			"   INSERT INTO comedy (Movie_id,Title) VALUES ?",
+			"   `;",
+			"   const values = [",
+			"      ['fdfgdfg','Disater Movies'],",
+			"      ['cvbvbnv','Ride Along'],",
+			"      ['wrtyt','Friday']",
+			"   ]",
+			"   con.query(query1,[values],function(err,res){",
+			"      if(err) throw err;",
+			"      console.log('Insert data into comedy table!!!');",
+			"      console.log(res);",
+			"   });",
+			"});",
+						
+						
+
+		],
+		"description": "Inserting a block of Nodejs syntaxes to insert data into a table of a specific MySQL database"
+	},
+
+	"SQL SELECT,WHERE escaping query values":{
+		"scope":"plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix":"nodejs_selectwhereEscapingQueryValueMySQLDatabase",
+		"body":[
+			"//The example below show you how to use query SELECT WHERE condition using escaping ",
+			"//query values technique",
+			"conn.connect(function(err){",
+			"   if(err) throw err;",
+			"   console.log('Connected to databasename database!!!');",
+			"   const user_favorite_movie = 'Bruce Almighty';",
+			"   const query1 = 'SELECT * FROM comedy WHERE Title = '+mysql.escape(user_favorite_movie);",
+			"   conn.query(query1,function(err,res){",
+			"      if(err) return err;",
+			"      console.log(res);",
+			"   });",
+			"});",
+			"\t",
+			"//Method 2 uses ? symbol as placeholders",
+			"conn.connect(function(err){",
+			"    if(err) throw err;",
+			"    console.log('Connected to movies_collection database!!!');",
+			"    const user_favorite_movie = 'Bruce Almighty';",
+			"    const year_select = '2003';",
+			"    const query1 = 'SELECT * FROM comedy WHERE Title = ? AND year = ?';",
+			"    conn.query(query1,[user_favorite_movie,year_select],function(err,res){",
+			"      if(err) return err;",
+			"      console.log(res);",
+			"   });",
+			"});",
+		],
+		"description": "Inserting a block of Nodejs syntaxes to select data using escaping query value technique from a table of a specific MySQL database"
+	}
+
+	
+
+}

@@ -1,0 +1,554 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+    "HTML button+attributes":{
+        "scope":"plaintext,html,php,javascript,typescript,python,java,csharp,cplusplus,react native, kotlin,swift",
+        "prefix":"html_button_with_attributes",
+        "body":[
+            "<button id='${1:butt1}' name='${2:butt1}' title='${3:button 1}' ",
+            "type='${4|button,submit|}' class='btn btn-primary text-white w3-hover-green'",
+            "onclick='${5:func1()}' data-butt-data='${6:button_data}'><i class='${7:fa fa-home}'></i>  ${8:Button1}</button>",
+
+            "\t",
+            "\t",
+        "<button id='${1:butt2}' name='${2:butt2}' title='${3:button 2}' ",
+            "type='${4|button,submit|}' class='w3-button w3-ripple w3-blue w3-text-white w3-hover-red'",
+            "onclick='${5:func1()}' data-butt-data='${6:button_data}'><i class='${7:fa fa-home}'></i>  ${8:Button2}</button>"
+        ],
+        "description":"Create a button with all neccessary attributes"
+    },
+
+
+    "HTML <a>_button+attributes":{
+        "scope":"plaintext,html,php,javascript,typescript,python,java,csharp,cplusplus,react native, kotlin,swift",
+        "prefix":"html_<a>_button_with_attributes",
+        "body":[
+           "<a id='${1:butt1}' name='${2:butt1}' title='${3:button 1}' href='${4:#}' target='${5|_self,_blank,anyname|}' ",
+            "type='button' class='btn btn-primary text-white w3-hover-green'",
+            "onclick='${6:func1()}' data-butt-data='${7:button_data}'><i class='${8:fa fa-home}'></i>  ${9:Button1}</a>",
+
+            "\t",
+            "\t",
+        "<a id='${1:butt2}' name='${2:butt2}' title='${3:button 2}' href='${4:#}' target='${5|_self,_blank,anyname|}' ",
+            "type='button' class='w3-button w3-ripple w3-blue w3-text-white w3-hover-red'",
+            "onclick='${6:func1()}' data-butt-data='${7:button_data}'><i class='${8:fa fa-home}'></i>  ${9:Button2}</a>"
+        ],
+        "description":"Create a <a> element button with all neccessary attributes"
+    },
+
+
+
+
+    "HTML <input>+<label>+attributes":{
+        "scope":"plaintext,html,php,javascript,typescript,python,java,csharp,cplusplus,react native, kotlin,swift",
+        "prefix":"html_<input><label>_with_attributes",
+        "body":[
+            "<label for='${1:name_input}'><b>${2:Name}:</b></label><br/>",
+			"                   <input id='${3:name_input}' title='${4:name_input}' name='${5:name1}' type='${6|text,email,password,number,time,date,datetime-local,tel,month|}'",
+			"                   placeholder='${7:Enter your name...}' data-${8:input1}='${9:name input1 data}'",
+			"                   style={{width:'100%'}} value='$10' ",
+			"                   onchange='${11:Handle_data_func()}' ng-model='${12:mod1}' ",
+			"                   >",
+        ],
+        "description":"Create <input>+<label> elements with all neccessary attributes"
+    },
+
+
+
+    "HTML Form Code Block+Handle data":{
+        "scope":"plaintext,html,php,javascript,typescript,python,java,csharp,cplusplus,react native, kotlin,swift",
+        "prefix":"html_form_code_block_handle_data",
+        "body":[
+            "\t",
+            "\t",
+            "<?php",
+            "\t",
+            "\t",
+            "\t",
+            "\t",
+
+            "\\$name = \\$password = \\$email =\\$gender= \\$comment = \\$account_select = '';",
+                "\\$name_error = \\$password_error = \\$email_error = \\$gender_error= \\$comment_error = \\$account_select_error =  '';",
+ 
+                "\t",
+                "\t",
+                "\t",
+
+
+                "function check_func(\\$data){",
+                "    \\$data = trim(\\$data);",
+                "    \\$data = stripslashes(\\$data);",
+                "    \\$data = htmlspecialchars(\\$data);",
+                "    return \\$data;",
+                "}", 
+
+
+                "\t",
+                "\t",
+                "\t",
+
+
+                "        if(\\$_SERVER['REQUEST_METHOD'] == 'POST'){",
+
+                "\t",
+                "\t",
+
+                "             if(empty(\\$_POST['name1'])){",
+                "                      \\$name_error  = ' * Name is required!!! *';",
+                "              }else{",
+                "                     \\$name = check_func(\\$_POST['name1']);",
+                "              }",
+
+                "\t",
+                "\t",
+
+
+                "             if(empty(\\$_POST['pass1'])){",
+                "                 \\$password_error  = ' * Password is required!!! *';",
+                "             }else{",
+                "                 \\$password = check_func(\\$_POST['pass1']);",
+                "             }",
+
+
+                "\t",
+                "\t",
+
+
+                "             if(empty(\\$_POST['email1'])){",
+                "                 \\$email_error  = ' * Email is required!!! *';",
+                "             }else{",
+                "                 \\$email = check_func(\\$_POST['email1']);",
+                "             }",
+
+
+                "\t",
+                "\t",
+
+
+
+                "              if(empty(\\$_POST['gender1'])){",
+                "                      \\$gender_error  = ' * Gender is required!!! *';",
+                "              }else{",
+                "                      \\$gender = check_func(\\$_POST['gender1']);",
+                "              }",
+
+
+                "\t",
+                "\t",
+
+                "             if(empty(\\$_POST['comment1'])){",
+                "                 \\$comment_error  = ' * Comment is required!!! *';",
+                "             }else{",
+                "                 \\$comment = check_func(\\$_POST['comment1']);",
+                "             }",
+                
+                "\t",
+                "\t",
+                 
+                "             if(empty(\\$_POST['account_select1'])){",
+                "                 \\$account_select_error  = ' * Account Selection is required!!! * ';",
+                "             }else{",
+                "                 \\$account_select = check_func(\\$_POST['account_select1']);",
+                "             }",
+                
+                "\t",
+                "\t",
+                
+                "}",
+
+
+                "\t",
+                "\t",
+                "\t",
+                "\t",
+
+                "?>",
+
+                "\t",
+                "\t",
+                "\t",
+                "\t",
+
+
+                "<div style='display:grid;grid-template-columns:600px 600px'>",
+                
+                "\t",
+                "\t",
+                "\t",
+
+                "       <div>",
+
+
+                "                <form id='form1' name='form1' title='form1'",
+                "                action='<?php echo htmlspecialchars(\\$_SERVER['PHP_SELF'])?>'",
+                "                method='post' target='_self' enctype='multipart/form-data'",
+                "                style='width:600px;border:2px solid green;padding:20px;font-size:25px'",
+                "                data-form1='form1_data'  onsubmit='submit_func()'>",
+                       
+                "\t",
+                "\t",
+
+                "                        <div class='w3-center'>",
+                "                                <img src='image/avatar/avatar1.png' width='50px' height='50px'>",
+                "                                <b style='font-size:35px'>Account</b>",
+                "                        </div>",
+                 "\t",
+                "\t",    
+                    
+                "                        <label for='name_input'><b>Name:</b></label>",
+                "                        <span id='error1' class='text-danger'><?php echo \\$name_error;?></span>",
+                "                        <br>",
+                "                        <input id='name_input' title='name input' name='name1' type='text'",
+                "                        placeholder='Enter your name...' ng-model='mod1' style='width:100%;' value='<?php echo \\$name;?>' required",
+                "                        data-name-input='name_input_data'",
+                "                        onfocus='' onblur=''",
+                "                        onmouseover='' onmouseenter='' ",
+                "                        onmouseleave='' onmouseout=''>",
+                "\t",
+                "\t",    
+                    
+                    
+                 "                      <!-- onfocus='input_effect1('in')' onblur='input_effect1('out')'",
+                 "                       onmouseover='input_effect1('in')' onmouseenter='input_effect1('in')' ",
+                 "                       onmouseleave='input_effect1('out')' onmouseout='input_effect1('out')'",
+                 "                       ng-mouseenter='input_effect1('in')'",
+                 "                       ng-mouseleave='input_effect1('out')'",
+                 "                       ng-focus='input_effect1('in')'",
+                 "                       ng-blur='input_effect1('out')'",
+                 "                       pattern=''",
+                 "                       maxlength='200'  -->",
+                "\t",
+                "\t",                        
+                                        
+                                        
+            "                            <label for='email_input'><b>Email:</b></label>",
+            "                            <span id='error2' class='text-danger'><?php echo \\$email_error;?></span>",
+            "                            <br>",
+            "                            <input id='email_input' title='email input' name='email1' type='email'",
+            "                            placeholder='Enter your email...' ng-model='mod2' style='width:100%;' value='<?php echo \\$email;?>' required",
+            "                            data-email-input='email_input_data'",
+            "                            onfocus='' onblur='' ",
+            "                            onmouseover='' onmouseenter=''",
+            "                            onmouseleave='' onmouseout=''>",
+             "\t",
+             "\t",      
+                    
+            "                            <label for='pass_input'><b>Password:</b></label>",
+            "                            <span id='error3' class='text-danger'><?php echo \\$password_error;?></span>",
+            "                            <br>",
+            "                            <input id='pass_input' title='password input' name='pass1' type='password'",
+            "                            placeholder='Enter your password...' ng-model='mod3' style='width:100%;' value='<?php echo \\$password;?>' required",
+            "                            data-password-input='password_input_data'",
+            "                            onfocus='' onblur='' ",
+            "                            onmouseover='' onmouseenter='' ",
+            "                            onmouseleave='' onmouseout=''> ",
+            "\t",
+            "\t",
+
+            
+            "                            <label><b>Gender:</b></label>",
+            "                            <span id='error4' class='text-danger'><?php echo \\$gender_error;?></span>",
+            "                            <br>",
+            "\t",
+            "\t",                        
+             "                           <input id='male_check' title='male check' name='gender1' type='checkbox'",
+             "                            ng-model='mod4' style='width:20px;height:20px'",
+             "                           data-male-check='male_check_data' value='Male' ",
+             "                           <?php if(isset(\\$gender) && \\$gender === 'Male') echo 'checked';?>",
+             "                           > ",
+             "                           <label for='male_check'><b>Male</b></label>",
+
+            "\t",
+            "\t",
+            "                            <input id='female_check' title='female check' name='gender1' type='checkbox'",
+            "                             ng-model='mod5' style='width:20px;height:20px'",
+            "                            data-female-check='female_check_data' value='Female'",
+            "                            <?php if(isset(\\$gender) && \\$gender === 'Female') echo 'checked';?>",
+            "                            >",
+            "                            <label for='female_check'><b>Female</b></label>",
+            "\t",
+            "\t",
+
+            "                            <input id='other_check' title='other check' name='gender1' type='checkbox'",
+            "                            ng-model='mod6' style='width:20px;height:20px'",
+            "                            data-other-check='other_check_data' value='Other'",
+            "                            <?php if(isset(\\$gender) && \\$gender === 'Other') echo 'checked';?>",
+            "                            > ",
+            "                            <label for='other_check'><b>Other</b></label><br>",
+            "\t",
+            "\t",
+
+            "                             <label for='comment_input'><b>Comment:</b></label>",
+            "                             <span class='error5'><?php echo \\$comment_error;?></span><br>",
+
+            "\t",
+            "\t",
+
+
+            "                             <textarea id='comment_input' name='comment1' title='comment_input' ",
+            "                             placeholder='Comment something...' data-comment-input='comment_input_data' ng-model='mod7' ",
+            "                             style='width:100%;height:80px;overflow:scroll;'><?php echo \\$comment;?></textarea><br><br>",
+            "\t",
+            "\t",
+
+
+                                        
+
+            "                            <label for='account_select'><b>Account Selection:</b></label>",
+            "                            <span class='error6'><?php echo \\$account_select_error;?></span><br>",
+            "\t",
+            "\t",
+
+            "                            <select id='account_select' name='account_select1' title='account_selection' ",
+            "                            data-account-select='account_selection_data' ng-model='mod8' ",
+            "                            style='width:100%;'>",
+            "                                <option disabled selected>---Account Selection---</option>",
+            "                                <optgroup label='Common'>",
+            "                                    <option value='Type_1'>Type 1</option>",
+            "                                    <option value='Type_2'>Type 2</option>",
+            "                                    <option value='Type_3'>Type 3</option>",
+            "                                </optgroup>",
+            "                                <optgroup label='VIP'>",
+            "                                    <option value='Type_4'>Type 4</option>",
+            "                                    <option value='Type_5'>Type 5</option>",
+            "                                    <option value='Type_6'>Type 6</option>",
+            "                                </optgroup>",
+            "                                <optgroup label='First Class'>",
+            "                                    <option value='Type_7'>Type 7</option>",
+            "                                    <option value='Type_8'>Type 8</option>",
+            "                                    <option value='Type_9'>Type 9</option>",
+            "                                    <option value='Type_10'>Type 10</option>",
+            "                                </optgroup>",
+            "\t",
+            "\t",
+
+            "                        </select><br><br>",
+            "\t",
+            "\t",
+                    
+            "                            <button id='butt1' name='butt1' title='button 1'",
+            "                    type='submit' class='btn btn-primary text-white w3-hover-green'",
+            "                    style='width:100%;font-size:25px' data-register-butt='register_button_data'><i class='fa fa-sign-in'></i> REGISTER</button>",
+             "\t",
+             "\t",
+                        
+                        
+            "                    </form>",
+
+            "\t",
+            "\t",
+
+
+                "       </div>",
+
+
+
+                "\t",
+                "\t",
+                "\t",
+
+
+                "       <div>",
+                "            <b>Your name: <?php echo \\$name;?></b><br>",
+                "            <b>Your password: <?php echo \\$password;?></b><br>",
+                "            <b>Your email: <?php echo \\$email;?></b><br>",
+                "            <b>Your gender: <?php echo \\$gender;?></b><br>",
+                "            <b>Your comment: <?php echo \\$comment;?></b><br>",
+                "            <b>Your Account Type: <?php echo \\$account_select;?></b><br>",
+ 
+                "       </div>",
+
+                "\t",
+                "\t",
+                "\t",
+
+
+                "</div>",
+
+
+
+
+
+
+
+
+                                
+                "<script>",
+                "      var jq = \\$.noConflict();",
+                "      jq(document).ready(function($){",
+                "       //The below syntaxes support disable 2 checkboxes after user select a specific gender",
+                "             var  n = 1;",
+                "            \\$('#male_check').click(function(){",
+                "              if( n ==1){",
+                "              \\$('#female_check').attr('disabled','true');",
+                "              \\$('#other_check').attr('disabled','true');",
+                "               n = 2;",
+                "             }else{",
+                "              \\$('#female_check').removeAttr('disabled');",
+                "              \\$('#other_check').removeAttr('disabled');",
+                "               n =1;",
+                "             }",
+                "            });",
+
+                "\t",
+                "\t",
+
+
+
+                "            \\$('#female_check').click(function(){",
+                "              if( n ==1){",
+                "              \\$('#male_check').attr('disabled','true');",
+                "              \\$('#other_check').attr('disabled','true');",
+                "               n = 2;",
+                "             }else{",
+                "              \\$('#male_check').removeAttr('disabled');",
+                "              \\$('#other_check').removeAttr('disabled');",
+                "               n =1;",
+                "             }",
+                "            });",
+
+                "\t",
+                "\t",
+
+
+
+                "            \\$('#other_check').click(function(){",
+                "              if( n ==1){",
+                "              \\$('#male_check').attr('disabled','true');",
+                "              \\$('#female_check').attr('disabled','true');",
+                "               n = 2;",
+                "             }else{",
+                "              \\$('#female_check').removeAttr('disabled');",
+                "              \\$('#male_check').removeAttr('disabled');",
+                "               n =1;",
+                "             }",
+                "            });",
+
+                "\t",
+                "\t",
+                    
+
+
+
+                "      })",
+                "\t",
+                "\t",
+
+                "              </script>",
+    
+
+
+
+
+
+
+        ],
+        "description": "Create Form code block and handle data with PHP"
+    },
+
+     "HTML Overlay block":{
+        "scope":"plaintext,html,php,javascript,typescript,python,java,csharp,cplusplus,react native, kotlin,swift",
+        "prefix":"html_overlayBlock",
+        "body":[
+            "<div id='overlay1' style='width:100%;height:100%;position:fixed;top:0;left:0;right:0;bottom:0;z-index:1;",
+            "background-color:rgba(0, 0, 0, 0.305);display:none;' onclick='close_overlay_func()'></div>"
+        ],
+        "description":"Adding an Overlay block using Html+CSS which is a block that cover all your website content and prevent any user to interact with the main content"
+    },
+
+
+
+    "HTML <img> ":{
+        "scope":"plaintext,html,php,javascript,typescript,python,java,csharp,cplusplus,react native, kotlin,swift",
+        "prefix":"html_<img>_tag",
+        "body":[
+           "<img id='img1' title='img1' alt='img1' data-img1='img1_data' src='image/...' width='300px' height='300px'>"
+        ],
+        "description":"Adding <img> syntax"
+    },
+
+
+
+    "HTML Grid block for CSS Grid styling ":{
+        "scope":"plaintext,html,php,javascript,typescript,python,java,csharp,cplusplus,react native, kotlin,swift",
+        "prefix":"html_gridBlockForCSS_styling",
+        "body":[
+            "<!--Please add CSS syntax to style this block1 grid block. <img> tags below are just example to test the block's contents-->",
+            "       <div id='block1'>",
+            "           <div id='bl1_1'>",
+            "                <img src='image/img1.jpg' alt='image1'",
+            "                width='400px' height='400px'>",
+            "           </div>",
+            "           <div id='bl1_2'>",
+            "                <img src='image/img2.jpg' alt='image2'",
+            "                width='400px' height='400px'>",
+            "           </div>",
+            "           <div id='bl1_3'>",
+            "                <img src='image/img3.jpg' alt='image3'",
+            "                width='400px' height='400px'>",
+            "           </div>",
+            "           <div id='bl1_4'>",
+            "                <img src='image/img4.jpg' alt='image4'",
+            "                width='400px' height='400px'>",
+            "           </div>",
+            "      </div>",
+        ],
+        "description":"Adding grid block as <div> tags with 4 children <div> tags to make grid contents  that can be used for CSS Grid Styling"
+    },
+
+
+
+
+
+
+    "HTML Grid block for Boostrap Grid styling ":{
+        "scope":"plaintext,html,php,javascript,typescript,python,java,csharp,cplusplus,react native, kotlin,swift",
+        "prefix":"html_gridBlockForBootstrap_styling",
+        "body":[
+            "       <div id='block1' class='row row-cols-5'>",
+            " <!--row-cols-5 is 5 columns in one row-->",
+            "           <div id='bl1_1' class='col-2' style='margin-right:20px;'>",
+            "                <img src='image/img1.jpg' alt='image1'",
+            "                width='100%' height='100%'>",
+            "           </div>",
+            "       <!--using col-2 is going to let Bootstrap auto generate a small size for your block",
+            "       and you don't have to specify the with or height or internal elements. If you open",
+            "       the webpage in different screen size, the program will adjust the width and height",
+            "       of this block for you => No need to write a lot of CSS @media syntaxes anymore.",
+            "       -->",
+            "           <div id='bl1_2' class='col-2' style='margin-right:20px;'>",
+            "                <img src='image/img2.jpg' alt='image2'",
+            "                width='100%' height='100%'>",
+            "           </div>",
+            "           <div id='bl1_3' class='col-2' style='margin-right:20px;'>",
+            "                <img src='image/img3.jpg' alt='image3'",
+            "                width='100%' height='100%'>",
+            "           </div>",
+            "           <div id='bl1_4'class='col-2' style='margin-right:20px;'>",
+            "                <img src='image/img4.jpg' alt='image4'",
+            "                width='100%' height='100%'>",
+            "           </div>",
+            "           <div id='bl1_5'class='col-2' style='margin-right:20px;'>",
+            "                <img src='image/img5.jpg' alt='image5'",
+            "                width='100%' height='100%'>",
+            "           </div>",
+            "      </div>",
+        ],
+        "description":"Adding grid block as <div> tags with 4 children <div> tags that has special Bootstrap class values to make grid contents  that can be used for Bootstrap Grid Styling"
+    },
+
+}

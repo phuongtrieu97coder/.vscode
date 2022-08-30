@@ -1,0 +1,64 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+    "Starting Syntax":{
+        "scope":"plaintext,angularjs,javascript,typescript,html,php,react,reactjs,jquery",
+        "prefix":"angularjs_starting_syntax",
+        "body":[
+
+            "var ${1:app} = angular.module('${2:app1}',[]);",
+            "${3:app}.controller('${4:app1_controller}',function(\\$scope){",
+            "     \\$scope.${5:intro1} = '${6:Welcome}';",
+            "});",
+            "\t",
+            "\t",
+            "\t",
+            
+            "${7:app}.directive('${8:test1}',function(){",
+            "    return{",
+            "        restrict:'${9:E}',   // E is element , A is Attribute , C is classname , M is comment",
+            "        templateURL:'${10:test1.php}',",
+            "        template:'<h1>Good morning</h1>',",
+            "        scope:{",
+            "            info:'=',",
+            "            ${11:data1}:'='",
+            "        }",
+            "    }",
+            "})",
+        ],
+        "description":"Create a block of starting syntax"
+    },
+
+
+
+
+    
+    "Initiate Angularjs app code block of HTML":{
+        "scope":"plaintext,angularjs,javascript,typescript,html,php,react,reactjs,jquery",
+        "prefix":"angularjs_initiate_html_syntax",
+        "body":[
+
+           " <div ng-app='${1:app1}' > ",
+ 
+           "         <div ng-controller='${2:app1_controller1}'> </div>",
+           "         <div ng-controller='${3:app1_controller2}'> </div>",
+        
+          " </div>"
+        ],
+        "description":"Create an HTML block codes to initiate the AngularJS application"
+    }
+}
