@@ -509,6 +509,24 @@
 		"description": "Inserting a block of sql syntaxes to select specific table's columns with data"
 	},
 
+
+	"Get column name":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+        "prefix":"sql_getColumnName",
+		"body":[
+            "    SELECT TABLE_NAME, COLUMN_NAME",
+			"    FROM INFORMATION_SCHEMA.COLUMNS",
+			"    WHERE COLUMN_NAME LIKE '%any column name%';",
+			"\t",
+			"\t",
+			"#If you want to target a specific database",
+			"     SELECT TABLE_NAME, COLUMN_NAME",
+			"     FROM INFORMATION_SCHEMA.COLUMNS",
+			"     WHERE COLUMN_NAME LIKE '%any column name%' AND TABLE_SCHEMA = 'your database name';"
+		],
+		"description": "Inserting a block of sql syntaxes to select and return specific column name"
+	},
+
 	"MIN,MAX,COUNT,AVG,SUM":{
 		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
         "prefix":"sql_MinMaxCountAvgSum",
