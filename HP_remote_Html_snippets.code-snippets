@@ -67,6 +67,153 @@
         "description":"Create <input>+<label> elements with all neccessary attributes"
     },
 
+    "HTML Basic Form":{
+        "scope":"plaintext,html,php,javascript,typescript,python,java,csharp,cplusplus,react native, kotlin,swift",
+        "prefix":"html_formBasic",
+        "body": [
+
+            "                <form id='form1' name='form1' title='form1'",
+            "                action='<?php echo htmlspecialchars(\\$_SERVER['PHP_SELF'])?>'",
+            "                method='post' target='_self' enctype='multipart/form-data'",
+            "                style='width:600px;border:2px solid green;padding:20px;font-size:25px'",
+            "                data-form1='form1_data'  onsubmit='submit_func()'>",
+                   
+            "\t",
+            "\t",
+
+            "                        <div class='w3-center'>",
+            "                                <img src='image/avatar/avatar1.png' width='50px' height='50px'>",
+            "                                <b style='font-size:35px'><i class='fa fa-user'></i>Account</b>",
+            "                        </div>",
+             "\t",
+            "\t",    
+                
+            "                        <label for='name_input'><b>Name:</b></label>",
+            "                        <span id='error1' class='text-danger'><?php echo \\$name_error;?></span>",
+            "                        <br>",
+            "                        <input id='name_input' title='name input' name='name1' type='text'",
+            "                        placeholder='Enter your name...' ng-model='mod1' style='width:100%;' value='<?php echo \\$name;?>' required",
+            "                        data-name-input='name_input_data'",
+            "                        >",
+            "\t",
+            "\t",    
+                
+        
+                                    
+        "                            <label for='email_input'><b>Email:</b></label>",
+        "                            <span id='error2' class='text-danger'><?php echo \\$email_error;?></span>",
+        "                            <br>",
+        "                            <input id='email_input' title='email input' name='email1' type='email'",
+        "                            placeholder='Enter your email...' ng-model='mod2' style='width:100%;' value='<?php echo \\$email;?>' required",
+        "                            data-email-input='email_input_data'",
+        "                            >",
+         "\t",
+         "\t",      
+                
+        "                            <label for='pass_input'><b>Password:</b></label>",
+        "                            <span id='error3' class='text-danger'><?php echo \\$password_error;?></span>",
+        "                            <br>",
+        "                            <input id='pass_input' title='password input' name='pass1' type='password'",
+        "                            placeholder='Enter your password...' ng-model='mod3' style='width:100%;' value='<?php echo \\$password;?>' required",
+        "                            data-password-input='password_input_data'",
+        "                            > ",
+        "\t",
+        "\t",
+
+        
+        "                            <label><b>Gender:</b></label>",
+        "                            <span id='error4' class='text-danger'><?php echo \\$gender_error;?></span>",
+        "                            <br>",
+        "\t",
+        "\t",                        
+         "                           <input id='male_check' title='male check' name='gender1' type='checkbox'",
+         "                            ng-model='mod4' style='width:20px;height:20px'",
+         "                           data-male-check='male_check_data' value='Male' ",
+         "                           <?php if(isset(\\$gender) && \\$gender === 'Male') echo 'checked';?>",
+         "                           > ",
+         "                           <label for='male_check'><b>Male</b></label>",
+
+        "\t",
+        "\t",
+        "                            <input id='female_check' title='female check' name='gender1' type='checkbox'",
+        "                             ng-model='mod5' style='width:20px;height:20px'",
+        "                            data-female-check='female_check_data' value='Female'",
+        "                            <?php if(isset(\\$gender) && \\$gender === 'Female') echo 'checked';?>",
+        "                            >",
+        "                            <label for='female_check'><b>Female</b></label>",
+        "\t",
+        "\t",
+
+        "                            <input id='other_check' title='other check' name='gender1' type='checkbox'",
+        "                            ng-model='mod6' style='width:20px;height:20px'",
+        "                            data-other-check='other_check_data' value='Other'",
+        "                            <?php if(isset(\\$gender) && \\$gender === 'Other') echo 'checked';?>",
+        "                            > ",
+        "                            <label for='other_check'><b>Other</b></label><br>",
+        "\t",
+        "\t",
+
+        "                             <label for='comment_input'><b>Comment:</b></label>",
+        "                             <span class='error5'><?php echo \\$comment_error;?></span><br>",
+
+        "\t",
+        "\t",
+
+
+        "                             <textarea id='comment_input' name='comment1' title='comment_input' ",
+        "                             placeholder='Comment something...' data-comment-input='comment_input_data' ng-model='mod7' ",
+        "                             style='width:100%;height:80px;overflow:scroll;'><?php echo \\$comment;?></textarea><br><br>",
+        "\t",
+        "\t",
+
+
+                                    
+
+        "                            <label for='account_select'><b>Account Selection:</b></label>",
+        "                            <span class='error6'><?php echo \\$account_select_error;?></span><br>",
+        "\t",
+        "\t",
+
+        "                            <select id='account_select' name='account_select1' title='account_selection' ",
+        "                            data-account-select='account_selection_data' ng-model='mod8' ",
+        "                            style='width:100%;'>",
+        "                                <option disabled selected>---Account Selection---</option>",
+        "                                <optgroup label='Common'>",
+        "                                    <option value='Type_1'>Type 1</option>",
+        "                                    <option value='Type_2'>Type 2</option>",
+        "                                    <option value='Type_3'>Type 3</option>",
+        "                                </optgroup>",
+        "                                <optgroup label='VIP'>",
+        "                                    <option value='Type_4'>Type 4</option>",
+        "                                    <option value='Type_5'>Type 5</option>",
+        "                                    <option value='Type_6'>Type 6</option>",
+        "                                </optgroup>",
+        "                                <optgroup label='First Class'>",
+        "                                    <option value='Type_7'>Type 7</option>",
+        "                                    <option value='Type_8'>Type 8</option>",
+        "                                    <option value='Type_9'>Type 9</option>",
+        "                                    <option value='Type_10'>Type 10</option>",
+        "                                </optgroup>",
+        "\t",
+        "\t",
+
+        "                        </select><br><br>",
+        "\t",
+        "\t",
+                
+        "                            <button id='butt1' name='butt1' title='button 1'",
+        "                    type='submit' class='btn btn-primary text-white w3-hover-green'",
+        "                    style='width:100%;font-size:25px' data-register-butt='register_button_data'><i class='fa fa-sign-in'></i> REGISTER</button>",
+         "\t",
+         "\t",
+                    
+                    
+        "                    </form>",
+        ],
+        "description": "Create a basic form"
+
+    },
+
 
 
     "HTML Form Code Block+Handle data":{
