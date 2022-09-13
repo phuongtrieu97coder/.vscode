@@ -723,6 +723,15 @@
 			"DROP VIEW view_name;"
 		],
 		"description": "Adding a block of sql CREATE VIEW | CREATE OR REPLACE VIEW  | DROP VIEW syntaxes to create a view or delete a view. A view is a virtual table based on the result-set of an SQL statement"
+	},
+
+
+	
+	"Check if a table exists or not":{
+		"scope":"javascript,typescript,html,php,angularjs,jquery,react,reactjs,plaintext,python,java,c,cpp,csharp,swift,ruby,objective-c,perl,perl6,sql,typescript,typescriptreact,vb,vue,xml,yaml,slim,pug,jade,powershell,json,go,groovy,git,fsharp,diff,dockerfile,coffeescript,abap,r",
+		"prefix":"sql_checkTableExistsOrNot",
+		"body": "SHOW TABLES LIKE 'table_name';",
+		"description": "Syntax to check if a table exists or not"
 	}
 
 
