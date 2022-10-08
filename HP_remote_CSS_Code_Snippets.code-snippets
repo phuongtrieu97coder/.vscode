@@ -24,5 +24,47 @@
 			"align-items:center;"
 		],
 		"description": "syntaxes of flexbox to center contents to the middle place of webpage"
+	},
+	"Using flexbox to float an element to the right side of its container":{
+		"scope":"css,html,javascript,php,scss,sass,less",
+
+		"prefix":"css_flexfloatright",
+
+		"body": [
+
+			"/*Make sure the container has display:flex, the the floating element has margin-left:auto*/",
+			"[id='block1']{",
+			" display:flex;",
+			"}",
+			"[id='block1'] > .img1{",
+			" margin-left:auto;",
+			"}"
+		],
+
+		"description": "syntaxes of flexbox to float an element to the right side of its container"
+
+	},
+	"Using clearfix hack to float an element without making it overflow outside of its container":{
+		"scope":"css,html,javascript,php,scss,sass,less",
+
+		"prefix":"css_floatclearfix",
+
+		"body": [
+
+			"/*Make sure the an element has float first ex: float:left; or float:right,",
+			"then provide its container with ::after, after that put some syntaxes as",
+			"content:\"\";clear:both;display:table;*/",
+			
+			"[id='block1'] > .img1{",
+			" float:right;",
+			"}",
+			"[id='block1']{",
+			" content:\"\";",
+			" clear:both;",
+			" display:table;",
+			"}",
+		],
+
+		"description": "syntaxes of float to use clearfix hack to float an element without making it overflow outside of its container"
 	}
 }

@@ -617,6 +617,63 @@
 			
 		],
 		"description": "Adding examples of JavaScript async+await"
-	}
+	},
+
+	"Find the cursor position from input field and add something to it":{
+		"scope": "plaintext,javascript,typescript,html,php,angularjs,jquery,react,reactjs",
+		"prefix": "js_findCursorPositionAndAddSomethingToIt",
+		"body": [
+			
+			"<input id='input1' type='text' placeholder='Enter something' style='width:500px;font-size:30px'>",
+			"<div id='output_cursor_position'></div>",
+"\t",
+			"<script>",
+			"   document.getElementById('input1').addEventListener('keyup',e=>{",
+			"         document.getElementById('output_cursor_position').innerHTML = \"Cursor position is at: \"+e.target.selectionStart;",
+			"   });",
+			"</script>",
+"\t",
+			"<!--The example below will help you add something to a specific cursor position-->",
+
+			"<button class='w3-hover-gray' style='font-size:25px;' onclick='AdEmoji(this)'>&#128512;</button><br>",
+
+			"<input id='input1' type='text' placeholder='Enter something' style='width:500px;font-size:30px'>",
+			"\t",
+			
+			
+			"<script>",
+			"      var cursor_position = \"\"",
+			"      document.getElementById('input1').addEventListener('keyup',e=>{",
+			"             cursor_position = e.target.selectionStart;",
+			"      });",
+			"      document.getElementById('input1').addEventListener('click',e=>{",
+			"             cursor_position = e.target.selectionStart;",
+			"      });",
+			"/*we must use onclick to make sure that the program finds the cursor position when an user tried to click a specific word in",
+			"This input field in which can be a faster solution than press the left or right arrow button on the keyboard */",
+			"\t",
+			"      function AdEmoji(target1){",
+			"         jQuery(function(\\$){",
+			"             let inputVal = \\$(\"[id='input1']\").val();",
+			"             if(inputVal == \"\"){",
+			"                   \\$(\"[id='input1']\").val(target1.innerHTML);",
+			"             }else{",
+			"                   \\$(\"[id='input1']\").val(",
+			"                         inputVal.slice(0,cursor_position)+",
+			"                         target1.innerHTML+",
+			"                         inputVal.slice(cursor_position,inputVal.length",
+			"                         )",
+			"                      );",
+			"             }",
+			"         });",
+			"      }",
+			"</script>",
+			
+	
+			
+		],
+		"description": "Adding examples that help find the cursor position in an input field and then add something to that position"
+	},
+
 
 }
