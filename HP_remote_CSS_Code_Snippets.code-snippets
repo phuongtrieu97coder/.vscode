@@ -66,5 +66,63 @@
 		],
 
 		"description": "syntaxes of float to use clearfix hack to float an element without making it overflow outside of its container"
-	}
+	},
+	
+	"Using CSS animation part1":{
+		"scope":"css,html,javascript,php,scss,sass,less",
+
+		"prefix":"css_animation_1",
+
+		"body": [
+
+			"animation-name: test1;/* specify the name of the animation to work with @keyframes */",
+			"animation-duration: 4s; ",
+			"animation-iteration-count: 1;/* how many times the animation should run */",
+			"animation-delay: none;/* how long do you want to wait until the animation run  */",
+			"animation-fill-mode: forwards;/*",
+			"The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)",
+			"both: The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions*/",
+			"animation-timing-function: linear;/* an animation with the same speed from start to end */",
+			"animation-direction:normal;/* animation-direction property specifies whether an animation should be played forwards, ",
+			"backwards, in altenate cycles, or normal */",
+		],
+
+		"description": "syntaxes of float to use css animation"
+	},
+	"Using CSS animation part2":{
+		"scope":"css,html,javascript,php,scss,sass,less",
+
+		"prefix":"css_animation_2",
+
+		"body": [
+
+			"@keyframes test1 {",
+			"      0% {property:value;}",
+			"      5% {property:value;}",
+			"      10% {property:value;}",
+			"      15% {property:value;}",
+			"      20% {property:value;}",
+			"      25% {property:value;}",
+			"      30% {property:value;}",
+			"      35% {property:value;}",
+			"      40% {property:value;}",
+			"      45% {property:value;}",
+			"      50% {property:value;}",
+			"      55% {property:value;}",
+			"      60% {property:value;}",
+			"      65% {property:value;}",
+			"      70% {property:value;}",
+			"      75% {property:value;}",
+			"      80% {property:value;}",
+			"      85% {property:value;}",
+			"      90% {property:value;}",
+			"      95% {property:value;}",
+			"      100% {property:value;}",
+			" }"
+		 
+			
+		],
+
+		"description": "syntaxes of float to use css animation"
+	},
 }
